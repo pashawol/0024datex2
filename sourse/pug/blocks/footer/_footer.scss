@@ -1,43 +1,82 @@
 .footer {
-		
+  @include media-breakpoint-up(lg) {
+
+    padding-top: 0;
+  }
+
+  padding-top: 60px;
+  // padding-bottom: rem(60);
+
+  .row {
+    align-items: center;
+  }
+
+  .row>* {
+    margin-bottom: rem(10);
+  }
+
+  @include media-breakpoint-up(lg) {
+
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: rem(40);
+    text-align: left;
+  }
+
+  text-align: center;
+
+  &__col {
+
+    // text-align: left;
+    @include media-breakpoint-up(lg) {
+
+      text-align: right;
+    }
+
+    a {
+      color: #ffffff !important;
+      text-decoration: none !important;
+      opacity: 0.5;
+    }
+  }
+
+  // 
+  @include media-breakpoint-up(xl) {}
+
+  @include media-breakpoint-up(lg) {}
+
+  @include media-breakpoint-up(md) {}
+
+  @include media-breakpoint-up(sm) {}
+
+  @include media-breakpoint-up(xs) {}
 
 
-// 
-@include media-breakpoint-up(xl) {}
-
-@include media-breakpoint-up(lg) {}
-
-@include media-breakpoint-up(md) {}
-
-@include media-breakpoint-up(sm) {}
-
-@include media-breakpoint-up(xs) {}
+  // 
+  @include media-breakpoint-between(md, xl) {}
 
 
-// 
-@include media-breakpoint-between(md, xl) {}
+  // 
+  @include media-breakpoint-only(xs) {}
+
+  @include media-breakpoint-only(sm) {}
+
+  @include media-breakpoint-only(md) {}
+
+  @include media-breakpoint-only(lg) {}
+
+  @include media-breakpoint-only(xl) {}
 
 
-// 
-@include media-breakpoint-only(xs) {}
+  // 
+  @include media-breakpoint-down(xl) {}
 
-@include media-breakpoint-only(sm) {}
+  @include media-breakpoint-down(lg) {}
 
-@include media-breakpoint-only(md) {}
+  @include media-breakpoint-down(md) {}
 
-@include media-breakpoint-only(lg) {}
+  @include media-breakpoint-down(sm) {}
 
-@include media-breakpoint-only(xl) {}
-
-
-// 
-@include media-breakpoint-down(xl) {}
-
-@include media-breakpoint-down(lg) {}
-
-@include media-breakpoint-down(md) {}
-
-@include media-breakpoint-down(sm) {}
-
-@include media-breakpoint-down(xs) {}
+  @include media-breakpoint-down(xs) {}
 }

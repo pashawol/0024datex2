@@ -1,7 +1,151 @@
 .header-block {
-	display: block;
- 
-	
+	position: relative;
+
+	@include media-breakpoint-down(xs) {
+
+		min-height: calc(100vh - 70px);
+	}
+
+	display: table;
+
+	.section {
+
+
+		&__inner {
+			display: table-cell;
+		}
+	}
+
+	@include media-breakpoint-up(xxl) {
+
+		padding-top: rem(180);
+		padding-bottom: rem(180);
+	}
+
+	padding-top: rem(80);
+	padding-bottom: rem(80);
+
+	.swiper-wrapper {
+		@include media-breakpoint-up(lg) {
+
+			justify-content: space-between;
+		}
+
+		align-items: center;
+	}
+
+	&__slider {
+		// margin-left: rem(-37 / 2);
+		// margin-right: rem(-37 / 2);
+	}
+
+	&__text-block {
+		text-align: right;
+	}
+
+	&__logo-img {
+		max-width: rem(383);
+		height: auto;
+
+		@include media-breakpoint-down(sm) {
+			max-width: 114px;
+			margin-left: rem(-30);
+		}
+
+	}
+
+	&__slide {
+		width: auto;
+
+		@include media-breakpoint-up(lg) {
+			margin-right: 0 !important;
+		}
+
+		// padding-left: rem(37 / 2);
+		// padding-right: rem(37 / 2);
+	}
+
+	&__container {
+		max-width: rem(925);
+		margin-left: auto;
+		margin-right: auto;
+
+		.row {
+			align-items: center;
+		}
+	}
+
+	h1 {
+		text-align: right;
+
+		@include media-breakpoint-down(sm) {
+			margin-bottom: 0;
+		}
+
+		span {
+			display: block;
+		}
+
+		@include media-breakpoint-up(xxl) {
+
+			font-size: rem(88);
+		}
+
+		@include media-breakpoint-up(md) {
+
+			font-size: rem(78);
+		}
+
+		font-size: rem(44);
+		// @include rfs(rem(88));
+		@extend .mono;
+		line-height: 1;
+		// margin-top: rem(20);
+		margin-bottom: rem(30);
+	}
+
+	&__text {
+		@extend .h5;
+		font-weight: normal;
+		max-width: rem(270);
+		margin-left: auto;
+		line-height: 1.56;
+
+		@include media-breakpoint-down(sm) {
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+			margin-top: rem(30);
+		}
+	}
+
+	&__clients {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+
+		@include media-breakpoint-up(xxl) {
+
+			padding-bottom: rem(75);
+		}
+
+		padding-bottom: rem(75/2);
+	}
+
+	&__clients-title {
+		@include media-breakpoint-up(xxl) {
+
+			padding-bottom: rem(40);
+		}
+
+		padding-bottom: rem(40 / 2);
+	}
+
+	picture {
+		opacity: 0.05;
+	}
+
 	// 
 	@include media-breakpoint-up(xl) {}
 

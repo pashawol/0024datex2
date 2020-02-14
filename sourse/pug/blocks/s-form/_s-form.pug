@@ -1,9 +1,35 @@
 mixin s-form()
 	// start s-form
 	+b.s-form.section.block-with-lazy#s-form&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 s-form
+		.section__inner 
+			.container
 				
-			.row
+				+e.title получите консультацию эксперта по&nbsp;1с
+				.row
+					.col-md-auto.order-md-last
+						+b.s-form-sidebar
+							+e.img-wrap
+								img.lazy(src="#" data-src="img/@2x/valentin.png", alt="")
+							+e.title  шуба валентин
+							+e.text  Сертифицированный специалист 1С
+							div
+								+e.tel(href="tel:8(800)500-57-48") 
+									+icon("phone-receiver")
+									| 8 (800) 500-57-48
+							div
+								+e.mail(href="mailto:info@datexsoft.ru ") info@datexsoft.ru  
+					.col
+						+form-wrap
+							.row
+								.col-lg-6
+									+input("Ваше имя")
+								.col-lg-6
+									+input("Ваш телефон",'tel')
+							+input("Расскажите о вашем проекте",'textarea')
+							.row.align-items-center
+								.col-lg-6
+									+e.INPUT.btn(type="submit" value="Отправить")
+								.col-lg-6
+									+polite
+				block
 	// end s-form

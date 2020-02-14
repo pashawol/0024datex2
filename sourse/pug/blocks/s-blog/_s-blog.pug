@@ -1,0 +1,37 @@
+mixin s-blog()
+	// start s-blog
+	+b.SECTION.s-blog.section#s-blog&attributes(attributes)
+		.section__inner  
+			.container
+				+b.section-title
+					h2 последнее из блога
+					
+				.row
+					mixin item(l, color, t)
+						+e.col.col
+							+e.item.bg-wrap.animate-item
+								.animate-item__inner
+								img.object-fit-js.lazy.img-bg(src="#" data-src="img/@2x/blog-1.jpg", alt="")
+								+e.label
+									+e.label-circle(style=`background-color:${color};`)
+									= l
+								+e.footer
+									+e.title
+										if block
+											block
+										else
+											a(href="#") Онлайн-касса для 1С:Фреш
+									+e.text 9 декабря, 2019 
+										+e.SPAN.date 
+											+icon("comment")
+											| 3
+					+item("Статьи","#81d742")
+					+item("Статьи","#81d742")
+					+item("Автоматизация бизнеса","#edb63d")
+						a(href="#") автоматизация нового бизнеса
+					+item("Статьи","#81d742")
+					+item("Автоматизация бизнеса","#edb63d")
+						a(href="#") автоматизация нового бизнеса
+					+item("Автоматизация бизнеса","#edb63d")
+						a(href="#") автоматизация нового бизнеса
+	// end s-blog

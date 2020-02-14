@@ -14,6 +14,7 @@ global.$ = {
 	gcmq: require('gulp-group-css-media-queries'),
 	gp: require('gulp-load-plugins')(),
 	browserSync: require('browser-sync').create(),
+	compass: require('gulp-compass'),
 	path: {
 		tasks: require('./gulp/config/tasks.js'),
 	},

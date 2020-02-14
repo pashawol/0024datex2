@@ -1,0 +1,106 @@
+.s-form-sidebar {
+	width: rem(330);
+
+	@include media-breakpoint-up(md) {
+		margin-top: rem(-175);
+
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		margin-bottom: 0;
+	}
+
+	margin-bottom: rem(30);
+
+	&__img-wrap {
+		width: rem(270);
+		height: rem(270);
+		position: relative;
+		overflow: hidden;
+
+		@include media-breakpoint-up(md) {
+
+
+			margin-left: auto;
+			margin-right: auto;
+			width: rem(270);
+			height: rem(270);
+		}
+
+		width: 60px;
+		height: 60px;
+		margin-bottom: rem(35);
+		border-radius: 50%;
+
+		img {
+			@extend .res-i;
+		}
+	}
+
+	&__title {
+		@extend .mono;
+		@extend .h2;
+		margin-bottom: rem(15);
+	}
+
+	&__tel {
+		@extend .mono;
+		@extend .h2;
+		color: #ffffff !important;
+		text-decoration: none !important;
+		display: inline-block;
+		margin-top: rem(15);
+		margin-bottom: rem(20);
+
+		.icon {
+			font-size: rem(20);
+			margin-right: rem(11);
+			color: $primary;
+		}
+	}
+
+	&__mail {
+		@extend .h5;
+		color: #ffffff !important;
+		text-decoration: none !important;
+		font-weight: normal;
+	}
+
+	//
+	@include media-breakpoint-up(xl) {}
+
+	@include media-breakpoint-up(lg) {}
+
+	@include media-breakpoint-up(md) {}
+
+	@include media-breakpoint-up(sm) {}
+
+	@include media-breakpoint-up(xs) {}
+
+	//
+	@include media-breakpoint-between(md, xl) {}
+
+
+	//
+	@include media-breakpoint-only(xs) {}
+
+	@include media-breakpoint-only(sm) {}
+
+	@include media-breakpoint-only(md) {}
+
+	@include media-breakpoint-only(lg) {}
+
+	@include media-breakpoint-only(xl) {}
+
+	//
+	@include media-breakpoint-down(xl) {}
+
+	@include media-breakpoint-down(lg) {}
+
+	@include media-breakpoint-down(md) {}
+
+	@include media-breakpoint-down(sm) {}
+
+	@include media-breakpoint-down(xs) {}
+
+}

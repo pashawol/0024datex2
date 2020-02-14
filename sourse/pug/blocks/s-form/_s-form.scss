@@ -1,27 +1,87 @@
 .s-form {
+	padding-top: 190px !important;
+
+	position: relative;
+
+	.section__inner {}
+
+	.container {}
+
+	&__title {
+		@extend .h1;
+		@extend .mono;
+		max-width: rem(460);
+		line-height: 1;
+		margin-bottom: rem(33);
+		padding-top: rem(50);
+	}
+
+	.form-wrap {
+		max-width: rem(690);
+		position: relative;
+
+		&::before {
+
+
+			@include media-breakpoint-up(xxl) {
+
+				right: rem(-210);
+			}
+
+			@include media-breakpoint-up(xl) {
+
+				right: rem(-150);
+			}
+
+
+			@include media-breakpoint-up(lg) {
+				content: '';
+				position: absolute;
+				right: rem(-60);
+
+				width: 2px;
+				height: rem(580px);
+				background-color: $dark;
+				top: rem(-220);
+			}
+		}
+	}
+
 	//
 	@include media-breakpoint-up(xl) {}
+
 	@include media-breakpoint-up(lg) {}
+
 	@include media-breakpoint-up(md) {}
+
 	@include media-breakpoint-up(sm) {}
+
 	@include media-breakpoint-up(xs) {}
-	
+
 	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
+	@include media-breakpoint-between(md, xl) {}
+
+
 	//
 	@include media-breakpoint-only(xs) {}
+
 	@include media-breakpoint-only(sm) {}
+
 	@include media-breakpoint-only(md) {}
+
 	@include media-breakpoint-only(lg) {}
+
 	@include media-breakpoint-only(xl) {}
-	
+
 	//
 	@include media-breakpoint-down(xl) {}
+
 	@include media-breakpoint-down(lg) {}
+
 	@include media-breakpoint-down(md) {}
+
 	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+
+	@include media-breakpoint-down(xs) {}
 
 }

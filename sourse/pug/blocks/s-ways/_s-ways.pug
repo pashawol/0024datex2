@@ -1,0 +1,33 @@
+mixin s-ways()
+	// start s-ways
+	+b.SECTION.s-ways.section#s-ways&attributes(attributes)
+		.section__inner
+			.container
+				+b.section-title 
+					h2 направления деятельности
+					
+				.row
+					mixin item(i,t1,t)
+						+e.col.col-xl-3
+							+e.item.bg-wrap
+								+e.inner
+								
+									img.object-fit-js.img-bg(src=`img/@2x/ways-img-${i}.jpg`, alt="")
+									+e.icon-wrap
+										img.res-i(src=`img/svg/ways-${i}.svg`, alt="")
+									+e.category= t1
+									//- +e.title
+									block
+									p Давно выяснено, что при оценке дизайна и&nbsp;композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют.
+									+e.btn(href="#") Перейти
+										+icon("arrow-right")
+						// /+e.col.col-xl-3
+					+item('1','Интернет-магазин')
+						+e.title программы и&nbsp;услуги&nbsp;1с
+					+item('2','Интернет-магазин')
+						+e.title торговое оборудование
+					+item('3','Сервис')
+						+e.title аренда программ&nbsp;1с
+					+item('4','Услуга')
+						+e.title реальная автоматизация
+	// end s-ways

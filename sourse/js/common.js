@@ -1,11 +1,11 @@
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
-	btnToggleMenuMobile : [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
-	menuMobile : document.querySelector(".menu-mobile--js"),
-	menuMobileLink : [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
-	body : document.querySelector("body"),
+	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
+	menuMobile: document.querySelector(".menu-mobile--js"),
+	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
+	body: document.querySelector("body"),
 
-	modalCall() { 
+	modalCall() {
 		$(".link-modal").fancybox({
 			arrows: false,
 			infobar: false,
@@ -26,55 +26,55 @@ const JSCCommon = {
 				},
 			},
 		});
-		$(".modal-close-js").click(function() {
+		$(".modal-close-js").click(function () {
 			$.fancybox.close();
 		})
 	},
 	// /magnificPopupCall
 	toggleMenu() {
-		let  _this = this;
+		let _this = this;
 		_this.btnToggleMenuMobile.forEach(function (element) {
-			element.addEventListener('click', function() {
+			element.addEventListener('click', function () {
 
 				_this.btnToggleMenuMobile.forEach(function (element) {
 					element.classList.toggle("on");
 				});
 				_this.menuMobile.classList.toggle("active");
 				_this.body.classList.toggle("fixed");
-				
+
 				return false;
 			});
 		});
 	},
 
 	closeMenu() {
-		let  _this = this;
+		let _this = this;
 		_this.btnToggleMenuMobile.forEach(function (element) {
 			element.classList.remove("on");
-			
+
 		});
 		_this.menuMobile.classList.remove("active");
 		_this.body.classList.remove("fixed");
-		
+
 	},
 
 	mobileMenu() {
 		// закрыть/открыть мобильное меню
-		let  _this = this;
+		let _this = this;
 
 		_this.toggleMenu();
-		_this.menuMobileLink.forEach(function (element)  {
-			element.addEventListener('click',  function (e) {
+		_this.menuMobileLink.forEach(function (element) {
+			element.addEventListener('click', function (e) {
 				console.log(element);
-				_this.closeMenu(); 
-				
+				_this.closeMenu();
+
 			});
 		})
-		document.addEventListener('mouseup', function (event)   {
+		document.addEventListener('mouseup', function (event) {
 			let container = event.target.closest(".menu-mobile--js.active"); // (1)
 			if (!container) {
-				_this.closeMenu(); 
-				
+				_this.closeMenu();
+
 			}
 		});
 	},
@@ -117,7 +117,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/DATEX_HOME.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -150,7 +150,7 @@ function eventHandler() {
 
 		const topH = $("header ").innerHeight();
 
-		$(window).scroll(function() {
+		$(window).scroll(function () {
 			if ($(window).scrollTop() > topH) {
 				$('.top-nav  ').addClass('fixed');
 			} else {
@@ -163,7 +163,7 @@ function eventHandler() {
 		}
 	}
 
-	$(window).resize(function() {
+	$(window).resize(function () {
 		heightses();
 
 	});
@@ -171,7 +171,7 @@ function eventHandler() {
 	heightses();
 
 	// листалка по стр
-	$(" .top-nav li a, .scroll-link").click(function() {
+	$(" .top-nav li a, .scroll-link").click(function () {
 		const elementClick = $(this).attr("href");
 		const destination = $(elementClick).offset().top;
 
@@ -180,123 +180,75 @@ function eventHandler() {
 		return false;
 	});
 
-	const icon = '<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve" ><path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12    c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028    c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265    c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z" ></path>';
-	const arrl2 = (' <div class="r">' + icon),
-		arrr2 = (' <div class="l">' + icon);
-	// // карусель
 
 	const defaultSlide = {
 		speed: 600,
 		infinite: true,
 		arrows: true,
 		mobileFirst: true,
-		prevArrow: arrr2,
-		nextArrow: arrl2,
+		// prevArrow: arrr2,
+		// nextArrow: arrl2,
 		// autoplay: true,
 		autoplaySpeed: 6000,
 		lazyLoad: 'progressive',
 	};
-	$('.s-gal__slider--js').slick({
-		...defaultSlide,
-
-		slidesToShow: 1,
-		responsive: [{
-			breakpoint: 1200,
-			settings: {
-				slidesToShow: 4,
-			}
-		}, {
-			breakpoint: 992,
-			settings: {
-				slidesToShow: 3,
-			}
-
-		}, {
-			breakpoint: 576,
-			settings: {
-				slidesToShow: 2,
-				arrows: true,
-			}
-
-
-		}],
-
+	var headSl = new Swiper('.header-block__slider--js', {
+		slidesPerView: 'auto',
+		watchOverflow: true,
+		spaceBetween: 37,
+		freeMode: true,
+		freeModeMomentum: true,
+		// spaceBetween: 30, 
 	});
-	// $('.s-gal__slider\
-	// ,.slider-for2 ')
-	// 	.on('lazyLoaded', function (event, slick, image, imageSource) {
-	// 		image.parent().css('background-image', 'url(' + image.attr('src') + ')');
-	// 	});
-	// slider
-	// const swiper4 = new Swiper('.color-slider', {
-	// 	// slidesPerView: 5,
-	// 	slidesPerView: 'auto',
-	// 	watchOverflow: true,
-	// 	spaceBetween: 0,
-	// 	freeMode: true,
-	// 	watchOverflow: true,
-	// 	slidesPerGroup: 3,
 
-	// 	// centeredSlides: true,
-	// 	loop: true,
-	// 	loopFillGroupWithBlank: true,
-	// 	touchRatio: 0.2,
-	// 	slideToClickedSlide: true,
-	// 	freeModeMomentum: true,
-	// 	navigation: {
-	// 		nextEl: '.swiper-button-next',
-	// 		prevEl: '.swiper-button-prev',
-	// 	},
+	var caseSl = new Swiper('.s-cases__slider--js', {
+		slidesPerView: 1,
+		// watchOverflow: true,
+		spaceBetween: 0,
+		lazy: {
+			loadPrevNext: true,
+			preloadImages: false,
+		},
 
-	// });
-	// modal window
+		pagination: {
+			el: $('.s-cases .swiper-pagination'),
+			type: 'bullets',
+			clickable: true,
+		},
+		// spaceBetween: 30, 
+	});
+	var advSl = new Swiper('.s-advantages__slider--js', {
+		slidesPerView: 1,
+		spaceBetween: 30,
+		// watchOverflow: true,
+		// spaceBetween: 0,
+		lazy: {
+			loadPrevNext: true,
+			preloadImages: false,
+		},
 
- 
-	//    const wow = new WOW({ mobile: false });
-	//         wow.init();
- 
-
-	var gets = (function() {
-		var a = window.location.search;
-		var b = new Object();
-		var c;
-		a = a.substring(1).split("&");
-		for (var i = 0; i < a.length; i++) {
-			c = a[i].split("=");
-			b[c[0]] = c[1];
+		pagination: {
+			el: $('.s-advantages .swiper-pagination'),
+			type: 'bullets',
+			clickable: true,
+			// dynamicBullets: true,
+		},
+		// spaceBetween: 30, 
+		breakpoints: {
+			// when window width is >= 320px
+			576: {
+				slidesPerView: 2,
+				spaceBetween: 20
+			},
+			// when window width is >= 480px
+			992: {
+				slidesPerView: 3
+			},
+			// when window width is >= 640px
+			1200: {
+				slidesPerView: 4
+			}
 		}
-		return b;
-	})();
-	// form
-	$("form").submit(function(e) {
-		e.preventDefault();
-		const th = $(this);
-		var data = th.serialize();
-		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-		$.ajax({
-			url: 'action.php',
-			type: 'POST',
-			data: data,
-		}).done(function(data)  {
-
-			$.fancybox.close();
-			$.fancybox.open({
-				src: '#modal-thanks',
-				type: 'inline'
-			});
-			// window.location.replace("/thanks.html");
-			setTimeout(function() {
-				// Done Functions
-				th.trigger("reset");
-				// $.magnificPopup.close();
-				// ym(53383120, 'reachGoal', 'zakaz');
-				// yaCounter55828534.reachGoal('zakaz');
-			}, 4000);
-		}).fail(function() { });
-
 	});
 
 };

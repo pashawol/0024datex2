@@ -2,5 +2,23 @@ mixin top-line()
 	// start .top-line
 	+b.top-line.block-with-lazy
 		.container
-			.row top-line
+			.row
+				.col
+					+e.logo
+						a(href="/")
+							img(src="img/@2x/logo.png", alt="")
+						+e.logo-text datex soft
+				.col-auto.d-none.d-lg-block
+					+e.link(href="#")
+						+icon("flag")
+						| Санкт-Петербург
+				.col-auto
+					+e.link--tel(href="+7(846)3004840")
+						+icon("phone-receiver")
+						span.d-none.d-md-inline +7 (846) 300 48 40
+				.col-auto.d-none.d-md-block
+					+e.btn(href="#") Заказать звонок
+				.col-auto
+					+b.toggle-menu-mobile--js
+						span
 	// end .top-line

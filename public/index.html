@@ -18,15 +18,16 @@
 		<meta property="og:image:width" content="968">
 		<meta property="og:image:height" content="504">
 		<!-- Custom Browsers Color-->
-		<meta name="theme-color" content="#3361d8">
-		<link rel="stylesheet" href="libs/slick-carousel/slick/slick.css"/>
+		<meta name="theme-color" content="#db1e32">
+		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+		<div id="stars"></div>
+		<div id="stars2"></div>
+		<div id="stars3"></div>
 		<div class="main-wrapper">
-			<div class="toggle-menu-mobile toggle-menu-mobile--js d-lg-none"><span></span>
-			</div>
 			<div class="menu-mobile menu-mobile--js d-lg-none">
 				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
 				</div>
@@ -55,76 +56,842 @@
 				</div>
 			</div>
 			<!--  мобильное меню-->
-			<!-- start HEADER.header-->
-			<header class="header block-with-lazy">
+			<header>
 				<!-- start .top-line-->
 				<div class="top-line block-with-lazy">
 					<div class="container">
-						<div class="row">top-line</div>
+						<div class="row">
+							<div class="col">
+								<div class="top-line__logo"><a href="/"><img src="img/@2x/logo.png" alt=""/></a>
+									<div class="top-line__logo-text">datex soft
+									</div>
+								</div>
+							</div>
+							<div class="col-auto d-none d-lg-block"><a class="top-line__link" href="#">
+								<svg class="icon icon-flag ">
+									<use xlink:href="img/svg/sprite.svg#flag"></use>
+								</svg>Санкт-Петербург</a>
+							</div>
+							<div class="col-auto"><a class="top-line__link top-line__link--tel" href="+7(846)3004840">
+								<svg class="icon icon-phone-receiver ">
+									<use xlink:href="img/svg/sprite.svg#phone-receiver"></use>
+								</svg><span class="d-none d-md-inline">+7 (846) 300 48 40</span></a>
+							</div>
+							<div class="col-auto d-none d-md-block"><a class="top-line__btn" href="#">Заказать звонок</a>
+							</div>
+							<div class="col-auto">
+								<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- end .top-line-->
-				<!-- start top-nav-->
-				<div class="top-nav block-with-lazy">
-					<div class="container">
-						<ul class="top-nav__nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="/" itemprop="url">Главная</a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Услуги  </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Подбор септика   </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Акции </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url"> О компании  </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url"> Доставка и оплата </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url"> Клиентам  </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url"> Наши работы   </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Контакты </a>
-							</li>
-						</ul>
+				<!-- start header-block-->
+				<div class="header-block section bg-wrap" id="header-block">
+					<!-- picture-->
+					<picture class="lazy picture-bg"> 
+						<source srcset="#" data-srcset="img/@2x/header-bg.png" type="image/png" media="(min-width:576px)"/>
+						<source srcset="#" data-srcset="img/@1x/header-bg.png" type="image/png"/><img class="object-fit-js" src="#" data-src="img/@2x/header-bg.png" alt=""/>
+					</picture>
+					<!-- /picture-->
+					<div class="section__inner">
+						<div class="header-block__container">
+							<div class="container">
+								<div class="row justify-content-center">
+									<div class="header-block__text-block col-md-6 col-auto">
+										<h1> <span>DATEX SOFT </span><span>официальный </span><span>партнер&nbsp;1с </span></h1>
+										<div class="header-block__text d-none d-md-block">Команда экспертов в&nbsp;сфере автоматизации бизнеса.
+										</div>
+									</div>
+									<div class="col-md-6 col-auto"><img class="header-block__logo-img" src="img/@2x/d.png" alt="" role="presentation"/>
+									</div>
+								</div>
+								<div class="header-block__text d-md-none">Команда экспертов в&nbsp;сфере автоматизации бизнеса.
+								</div>
+							</div>
+						</div>
+						<div class="header-block__clients">
+							<div class="container">
+								<div class="header-block__clients-title">Наши клиенты:
+								</div>
+								<div class="header-block__slider header-block__slider--js swiper-container">
+									<div class="swiper-wrapper">
+										<div class="header-block__slide swiper-slide"><img src="img/@2x/logo-1.png" alt=""/>
+										</div>
+										<div class="header-block__slide swiper-slide"><img src="img/@2x/logo-2.png" alt=""/>
+										</div>
+										<div class="header-block__slide swiper-slide"><img src="img/@2x/logo-3.png" alt=""/>
+										</div>
+										<div class="header-block__slide swiper-slide"><img src="img/@2x/logo-4.png" alt=""/>
+										</div>
+										<div class="header-block__slide swiper-slide"><img src="img/@2x/logo-5.png" alt=""/>
+										</div>
+										<div class="header-block__slide swiper-slide"><img src="img/@2x/logo-6.png" alt=""/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				<!-- end top-nav-->
+				<!-- end header-block-->
 			</header>
-			<!-- end HEADER.header-->
-			<!-- start header-block-->
-			<div class="header-block" id="header-block">
-				<div class="container">
-					<h1>header-block</h1>
-					<div class="row"></div>
+			<!-- start s-ways-->
+			<section class="s-ways section" id="s-ways">
+				<div class="section__inner">
+					<div class="container">
+						<div class="section-title"> 
+							<h2>направления деятельности</h2>
+						</div>
+						<div class="row">
+										<div class="s-ways__col col-xl-3">
+											<div class="s-ways__item bg-wrap">
+												<div class="s-ways__inner"><img class="object-fit-js img-bg" src="img/@2x/ways-img-1.jpg" alt=""/>
+													<div class="s-ways__icon-wrap"><img class="res-i" src="img/svg/ways-1.svg" alt=""/>
+													</div>
+													<div class="s-ways__category">Интернет-магазин
+													</div>
+													<div class="s-ways__title">программы и&nbsp;услуги&nbsp;1с
+													</div>
+													<p>Давно выяснено, что при оценке дизайна и&nbsp;композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют.</p><a class="s-ways__btn" href="#">Перейти
+													<svg class="icon icon-arrow-right ">
+														<use xlink:href="img/svg/sprite.svg#arrow-right"></use>
+													</svg></a>
+												</div>
+											</div>
+										</div>
+										<!-- /+e.col.col-xl-3-->
+										<div class="s-ways__col col-xl-3">
+											<div class="s-ways__item bg-wrap">
+												<div class="s-ways__inner"><img class="object-fit-js img-bg" src="img/@2x/ways-img-2.jpg" alt=""/>
+													<div class="s-ways__icon-wrap"><img class="res-i" src="img/svg/ways-2.svg" alt=""/>
+													</div>
+													<div class="s-ways__category">Интернет-магазин
+													</div>
+													<div class="s-ways__title">торговое оборудование
+													</div>
+													<p>Давно выяснено, что при оценке дизайна и&nbsp;композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют.</p><a class="s-ways__btn" href="#">Перейти
+													<svg class="icon icon-arrow-right ">
+														<use xlink:href="img/svg/sprite.svg#arrow-right"></use>
+													</svg></a>
+												</div>
+											</div>
+										</div>
+										<!-- /+e.col.col-xl-3-->
+										<div class="s-ways__col col-xl-3">
+											<div class="s-ways__item bg-wrap">
+												<div class="s-ways__inner"><img class="object-fit-js img-bg" src="img/@2x/ways-img-3.jpg" alt=""/>
+													<div class="s-ways__icon-wrap"><img class="res-i" src="img/svg/ways-3.svg" alt=""/>
+													</div>
+													<div class="s-ways__category">Сервис
+													</div>
+													<div class="s-ways__title">аренда программ&nbsp;1с
+													</div>
+													<p>Давно выяснено, что при оценке дизайна и&nbsp;композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют.</p><a class="s-ways__btn" href="#">Перейти
+													<svg class="icon icon-arrow-right ">
+														<use xlink:href="img/svg/sprite.svg#arrow-right"></use>
+													</svg></a>
+												</div>
+											</div>
+										</div>
+										<!-- /+e.col.col-xl-3-->
+										<div class="s-ways__col col-xl-3">
+											<div class="s-ways__item bg-wrap">
+												<div class="s-ways__inner"><img class="object-fit-js img-bg" src="img/@2x/ways-img-4.jpg" alt=""/>
+													<div class="s-ways__icon-wrap"><img class="res-i" src="img/svg/ways-4.svg" alt=""/>
+													</div>
+													<div class="s-ways__category">Услуга
+													</div>
+													<div class="s-ways__title">реальная автоматизация
+													</div>
+													<p>Давно выяснено, что при оценке дизайна и&nbsp;композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют.</p><a class="s-ways__btn" href="#">Перейти
+													<svg class="icon icon-arrow-right ">
+														<use xlink:href="img/svg/sprite.svg#arrow-right"></use>
+													</svg></a>
+												</div>
+											</div>
+										</div>
+										<!-- /+e.col.col-xl-3-->
+						</div>
+					</div>
 				</div>
-			</div>
-			<!-- end header-block-->
+			</section>
+			<!-- end s-ways-->
+			<!-- start s-cases-->
+			<section class="s-cases section" id="s-cases">
+				<div class="section__inner">
+					<div class="container">
+						<div class="section-title">
+							<div class="row">
+								<div class="col">
+									<h2>реализованные проекты</h2>
+								</div>
+								<div class="col-auto">
+									<div class="swiper-pagination"></div>
+								</div>
+							</div>
+						</div>
+						<div class="s-cases__slider s-cases__slider--js swiper-container">
+							<div class="swiper-wrapper">
+								<div class="s-cases__slide swiper-slide">
+									<div class="s-cases__item bg-wrap">
+										<div class="s-cases__inner"><img class="object-fit-js img-bg swiper-lazy" src="#" data-src="img/@2x/project-bg.png" alt=""/>
+											<div class="row">
+												<div class="s-cases__col col-lg-auto">
+													<div class="row">
+														<div class="s-cases__inner-col col-lg-12 col-md-auto">
+															<div class="s-cases__logo"><img class="swiper-lazy" src="#" data-src="img/@2x/project-logo.png" alt=""/>
+															</div>
+															<div class="s-cases__img-wrap"><img class="swiper-lazy" src="#" data-src="img/@2x/project-img.png" alt=""/>
+															</div>
+														</div>
+														<div class="col-lg-12 col text-lg-center text-left">
+															<div class="d-lg-none">
+																<div class="s-cases__title">Замания - семейный парк развлечений
+																</div>
+																<p>Крупнейший детский развлекательный центр в Москве и в областях.</p>
+															</div>
+															<div class="d-md-block d-none"><a class="s-cases__btn" href="#">
+																<svg class="icon icon-link-symbol ">
+																	<use xlink:href="img/svg/sprite.svg#link-symbol"></use>
+																</svg>zamania.ru</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col">
+													<div class="d-none d-lg-block">
+														<div class="s-cases__title">Замания - семейный парк развлечений
+														</div>
+														<p>Крупнейший детский развлекательный центр в Москве и в областях.</p>
+													</div>
+													<div class="s-cases__labels">
+														<div class="s-cases__labels-item">Перевод на 1С-Битрикс: Enterprise
+														</div>
+														<div class="s-cases__labels-item">Разработка b2b портала
+														</div>
+														<div class="s-cases__labels-item">Техническое сопровождение
+														</div>
+													</div>
+													<ul>
+														<li>39 000 товарных позиций;</li>
+														<li>ГЕО-зависимые цены и акции для 25 городов;</li>
+														<li>Единая бонусная система для офлайн- и онлайн и покупателей в режиме real-time;</li>
+														<li>Обеспечение стабильной работы высоконагруженного сервиса;</li>
+														<li>Единая бонусная система для офлайн- и онлайн и покупателей в режиме real-time.</li>
+													</ul>
+												</div>
+											</div>
+											<div class="d-md-none text-center"><a class="s-cases__btn" href="#">
+												<svg class="icon icon-link-symbol ">
+													<use xlink:href="img/svg/sprite.svg#link-symbol"></use>
+												</svg>zamania.ru</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="s-cases__slide swiper-slide">
+									<div class="s-cases__item bg-wrap">
+										<div class="s-cases__inner"><img class="object-fit-js img-bg swiper-lazy" src="#" data-src="img/@2x/project-bg.png" alt=""/>
+											<div class="row">
+												<div class="s-cases__col col-lg-auto">
+													<div class="row">
+														<div class="s-cases__inner-col col-lg-12 col-md-auto">
+															<div class="s-cases__logo"><img class="swiper-lazy" src="#" data-src="img/@2x/project-logo.png" alt=""/>
+															</div>
+															<div class="s-cases__img-wrap"><img class="swiper-lazy" src="#" data-src="img/@2x/project-img.png" alt=""/>
+															</div>
+														</div>
+														<div class="col-lg-12 col text-lg-center text-left">
+															<div class="d-lg-none">
+																<div class="s-cases__title">Замания - семейный парк развлечений
+																</div>
+																<p>Крупнейший детский развлекательный центр в Москве и в областях.</p>
+															</div>
+															<div class="d-md-block d-none"><a class="s-cases__btn" href="#">
+																<svg class="icon icon-link-symbol ">
+																	<use xlink:href="img/svg/sprite.svg#link-symbol"></use>
+																</svg>zamania.ru</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col">
+													<div class="d-none d-lg-block">
+														<div class="s-cases__title">Замания - семейный парк развлечений
+														</div>
+														<p>Крупнейший детский развлекательный центр в Москве и в областях.</p>
+													</div>
+													<div class="s-cases__labels">
+														<div class="s-cases__labels-item">Перевод на 1С-Битрикс: Enterprise
+														</div>
+														<div class="s-cases__labels-item">Разработка b2b портала
+														</div>
+														<div class="s-cases__labels-item">Техническое сопровождение
+														</div>
+													</div>
+													<ul>
+														<li>39 000 товарных позиций;</li>
+														<li>ГЕО-зависимые цены и акции для 25 городов;</li>
+														<li>Единая бонусная система для офлайн- и онлайн и покупателей в режиме real-time;</li>
+														<li>Обеспечение стабильной работы высоконагруженного сервиса;</li>
+														<li>Единая бонусная система для офлайн- и онлайн и покупателей в режиме real-time.</li>
+													</ul>
+												</div>
+											</div>
+											<div class="d-md-none text-center"><a class="s-cases__btn" href="#">
+												<svg class="icon icon-link-symbol ">
+													<use xlink:href="img/svg/sprite.svg#link-symbol"></use>
+												</svg>zamania.ru</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="s-cases__slide swiper-slide">
+									<div class="s-cases__item bg-wrap">
+										<div class="s-cases__inner"><img class="object-fit-js img-bg swiper-lazy" src="#" data-src="img/@2x/project-bg.png" alt=""/>
+											<div class="row">
+												<div class="s-cases__col col-lg-auto">
+													<div class="row">
+														<div class="s-cases__inner-col col-lg-12 col-md-auto">
+															<div class="s-cases__logo"><img class="swiper-lazy" src="#" data-src="img/@2x/project-logo.png" alt=""/>
+															</div>
+															<div class="s-cases__img-wrap"><img class="swiper-lazy" src="#" data-src="img/@2x/project-img.png" alt=""/>
+															</div>
+														</div>
+														<div class="col-lg-12 col text-lg-center text-left">
+															<div class="d-lg-none">
+																<div class="s-cases__title">Замания - семейный парк развлечений
+																</div>
+																<p>Крупнейший детский развлекательный центр в Москве и в областях.</p>
+															</div>
+															<div class="d-md-block d-none"><a class="s-cases__btn" href="#">
+																<svg class="icon icon-link-symbol ">
+																	<use xlink:href="img/svg/sprite.svg#link-symbol"></use>
+																</svg>zamania.ru</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col">
+													<div class="d-none d-lg-block">
+														<div class="s-cases__title">Замания - семейный парк развлечений
+														</div>
+														<p>Крупнейший детский развлекательный центр в Москве и в областях.</p>
+													</div>
+													<div class="s-cases__labels">
+														<div class="s-cases__labels-item">Перевод на 1С-Битрикс: Enterprise
+														</div>
+														<div class="s-cases__labels-item">Разработка b2b портала
+														</div>
+														<div class="s-cases__labels-item">Техническое сопровождение
+														</div>
+													</div>
+													<ul>
+														<li>39 000 товарных позиций;</li>
+														<li>ГЕО-зависимые цены и акции для 25 городов;</li>
+														<li>Единая бонусная система для офлайн- и онлайн и покупателей в режиме real-time;</li>
+														<li>Обеспечение стабильной работы высоконагруженного сервиса;</li>
+														<li>Единая бонусная система для офлайн- и онлайн и покупателей в режиме real-time.</li>
+													</ul>
+												</div>
+											</div>
+											<div class="d-md-none text-center"><a class="s-cases__btn" href="#">
+												<svg class="icon icon-link-symbol ">
+													<use xlink:href="img/svg/sprite.svg#link-symbol"></use>
+												</svg>zamania.ru</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="s-cases__slide swiper-slide">
+									<div class="s-cases__item bg-wrap">
+										<div class="s-cases__inner"><img class="object-fit-js img-bg swiper-lazy" src="#" data-src="img/@2x/project-bg.png" alt=""/>
+											<div class="row">
+												<div class="s-cases__col col-lg-auto">
+													<div class="row">
+														<div class="s-cases__inner-col col-lg-12 col-md-auto">
+															<div class="s-cases__logo"><img class="swiper-lazy" src="#" data-src="img/@2x/project-logo.png" alt=""/>
+															</div>
+															<div class="s-cases__img-wrap"><img class="swiper-lazy" src="#" data-src="img/@2x/project-img.png" alt=""/>
+															</div>
+														</div>
+														<div class="col-lg-12 col text-lg-center text-left">
+															<div class="d-lg-none">
+																<div class="s-cases__title">Замания - семейный парк развлечений
+																</div>
+																<p>Крупнейший детский развлекательный центр в Москве и в областях.</p>
+															</div>
+															<div class="d-md-block d-none"><a class="s-cases__btn" href="#">
+																<svg class="icon icon-link-symbol ">
+																	<use xlink:href="img/svg/sprite.svg#link-symbol"></use>
+																</svg>zamania.ru</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col">
+													<div class="d-none d-lg-block">
+														<div class="s-cases__title">Замания - семейный парк развлечений
+														</div>
+														<p>Крупнейший детский развлекательный центр в Москве и в областях.</p>
+													</div>
+													<div class="s-cases__labels">
+														<div class="s-cases__labels-item">Перевод на 1С-Битрикс: Enterprise
+														</div>
+														<div class="s-cases__labels-item">Разработка b2b портала
+														</div>
+														<div class="s-cases__labels-item">Техническое сопровождение
+														</div>
+													</div>
+													<ul>
+														<li>39 000 товарных позиций;</li>
+														<li>ГЕО-зависимые цены и акции для 25 городов;</li>
+														<li>Единая бонусная система для офлайн- и онлайн и покупателей в режиме real-time;</li>
+														<li>Обеспечение стабильной работы высоконагруженного сервиса;</li>
+														<li>Единая бонусная система для офлайн- и онлайн и покупателей в режиме real-time.</li>
+													</ul>
+												</div>
+											</div>
+											<div class="d-md-none text-center"><a class="s-cases__btn" href="#">
+												<svg class="icon icon-link-symbol ">
+													<use xlink:href="img/svg/sprite.svg#link-symbol"></use>
+												</svg>zamania.ru</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end s-cases-->
+			<!-- start s-advantages-->
+			<section class="s-advantages section" id="s-advantages">
+				<div class="section__inner"> 
+					<div class="container">
+						<div class="section-title">
+							<div class="row">
+								<div class="col">
+									<h2>достижения</h2>
+								</div>
+								<div class="col-auto">
+									<div class="swiper-pagination"></div>
+								</div>
+							</div>
+						</div>
+						<div class="s-advantages__slider s-advantages__slider--js swiper-container">
+							<div class="swiper-wrapper">
+									<div class="s-advantages__slide swiper-slide">
+										<div class="s-advantages__item animate-item">
+											<div class="animate-item__inner"></div>
+											<div class="s-advantages__head">
+												<div class="row">
+													<div class="s-advantages__title col">Сертификат
+													</div>
+													<div class="s-advantages__img-wrap col-auto"><img class="swiper-lazy" src="#" data-src="img/@2x/sert-logo-1.png" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="s-advantages__body">
+												<p>Сертификат удовстоверяет, что ООО &laquo;Датекс Софт&raquo; присвоен статус <strong>Центр Реальной Автоматизации</strong>.</p><a class="s-advantages__link" href="img/@2x/blog-3.jpg" data-fancybox="sertGal"></a>
+											</div>
+										</div>
+									</div>
+									<div class="s-advantages__slide swiper-slide">
+										<div class="s-advantages__item animate-item">
+											<div class="animate-item__inner"></div>
+											<div class="s-advantages__head">
+												<div class="row">
+													<div class="s-advantages__title col">Сертификат
+													</div>
+													<div class="s-advantages__img-wrap col-auto"><img class="swiper-lazy" src="#" data-src="img/@2x/sert-logo-2.png" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="s-advantages__body">
+												<p>Сертификат удовстоверяет, что ООО «Датекс Софт» является <strong>официальным партнером «фирмы 1С»</strong>.</p><a class="s-advantages__link" href="img/@2x/blog-3.jpg" data-fancybox="sertGal"></a>
+											</div>
+										</div>
+									</div>
+									<div class="s-advantages__slide swiper-slide">
+										<div class="s-advantages__item animate-item">
+											<div class="animate-item__inner"></div>
+											<div class="s-advantages__head">
+												<div class="row">
+													<div class="s-advantages__title col">Сертификат
+													</div>
+													<div class="s-advantages__img-wrap col-auto"><img class="swiper-lazy" src="#" data-src="img/@2x/sert-logo-1.png" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="s-advantages__body">
+												<p>Сертификат удовстоверяет, что ООО &laquo;Датекс Софт&raquo; присвоен статус <strong>Центр Реальной Автоматизации</strong>.</p><a class="s-advantages__link" href="img/@2x/blog-3.jpg" data-fancybox="sertGal"></a>
+											</div>
+										</div>
+									</div>
+									<div class="s-advantages__slide swiper-slide">
+										<div class="s-advantages__item animate-item">
+											<div class="animate-item__inner"></div>
+											<div class="s-advantages__head">
+												<div class="row">
+													<div class="s-advantages__title col">Сертификат
+													</div>
+													<div class="s-advantages__img-wrap col-auto"><img class="swiper-lazy" src="#" data-src="img/@2x/sert-logo-2.png" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="s-advantages__body">
+												<p>Сертификат удовстоверяет, что ООО «Датекс Софт» является <strong>официальным партнером «фирмы 1С»</strong>.</p><a class="s-advantages__link" href="img/@2x/blog-3.jpg" data-fancybox="sertGal"></a>
+											</div>
+										</div>
+									</div>
+									<div class="s-advantages__slide swiper-slide">
+										<div class="s-advantages__item animate-item">
+											<div class="animate-item__inner"></div>
+											<div class="s-advantages__head">
+												<div class="row">
+													<div class="s-advantages__title col">Сертификат
+													</div>
+													<div class="s-advantages__img-wrap col-auto"><img class="swiper-lazy" src="#" data-src="img/@2x/sert-logo-1.png" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="s-advantages__body">
+												<p>Сертификат удовстоверяет, что ООО &laquo;Датекс Софт&raquo; присвоен статус <strong>Центр Реальной Автоматизации</strong>.</p><a class="s-advantages__link" href="img/@2x/blog-3.jpg" data-fancybox="sertGal"></a>
+											</div>
+										</div>
+									</div>
+									<div class="s-advantages__slide swiper-slide">
+										<div class="s-advantages__item animate-item">
+											<div class="animate-item__inner"></div>
+											<div class="s-advantages__head">
+												<div class="row">
+													<div class="s-advantages__title col">Сертификат
+													</div>
+													<div class="s-advantages__img-wrap col-auto"><img class="swiper-lazy" src="#" data-src="img/@2x/sert-logo-2.png" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="s-advantages__body">
+												<p>Сертификат удовстоверяет, что ООО «Датекс Софт» является <strong>официальным партнером «фирмы 1С»</strong>.</p><a class="s-advantages__link" href="img/@2x/blog-3.jpg" data-fancybox="sertGal"></a>
+											</div>
+										</div>
+									</div>
+									<div class="s-advantages__slide swiper-slide">
+										<div class="s-advantages__item animate-item">
+											<div class="animate-item__inner"></div>
+											<div class="s-advantages__head">
+												<div class="row">
+													<div class="s-advantages__title col">Сертификат
+													</div>
+													<div class="s-advantages__img-wrap col-auto"><img class="swiper-lazy" src="#" data-src="img/@2x/sert-logo-1.png" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="s-advantages__body">
+												<p>Сертификат удовстоверяет, что ООО &laquo;Датекс Софт&raquo; присвоен статус <strong>Центр Реальной Автоматизации</strong>.</p><a class="s-advantages__link" href="img/@2x/blog-3.jpg" data-fancybox="sertGal"></a>
+											</div>
+										</div>
+									</div>
+									<div class="s-advantages__slide swiper-slide">
+										<div class="s-advantages__item animate-item">
+											<div class="animate-item__inner"></div>
+											<div class="s-advantages__head">
+												<div class="row">
+													<div class="s-advantages__title col">Сертификат
+													</div>
+													<div class="s-advantages__img-wrap col-auto"><img class="swiper-lazy" src="#" data-src="img/@2x/sert-logo-2.png" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="s-advantages__body">
+												<p>Сертификат удовстоверяет, что ООО «Датекс Софт» является <strong>официальным партнером «фирмы 1С»</strong>.</p><a class="s-advantages__link" href="img/@2x/blog-3.jpg" data-fancybox="sertGal"></a>
+											</div>
+										</div>
+									</div>
+									<div class="s-advantages__slide swiper-slide">
+										<div class="s-advantages__item animate-item">
+											<div class="animate-item__inner"></div>
+											<div class="s-advantages__head">
+												<div class="row">
+													<div class="s-advantages__title col">Сертификат
+													</div>
+													<div class="s-advantages__img-wrap col-auto"><img class="swiper-lazy" src="#" data-src="img/@2x/sert-logo-1.png" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="s-advantages__body">
+												<p>Сертификат удовстоверяет, что ООО &laquo;Датекс Софт&raquo; присвоен статус <strong>Центр Реальной Автоматизации</strong>.</p><a class="s-advantages__link" href="img/@2x/blog-3.jpg" data-fancybox="sertGal"></a>
+											</div>
+										</div>
+									</div>
+									<div class="s-advantages__slide swiper-slide">
+										<div class="s-advantages__item animate-item">
+											<div class="animate-item__inner"></div>
+											<div class="s-advantages__head">
+												<div class="row">
+													<div class="s-advantages__title col">Сертификат
+													</div>
+													<div class="s-advantages__img-wrap col-auto"><img class="swiper-lazy" src="#" data-src="img/@2x/sert-logo-2.png" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="s-advantages__body">
+												<p>Сертификат удовстоверяет, что ООО «Датекс Софт» является <strong>официальным партнером «фирмы 1С»</strong>.</p><a class="s-advantages__link" href="img/@2x/blog-3.jpg" data-fancybox="sertGal"></a>
+											</div>
+										</div>
+									</div>
+									<div class="s-advantages__slide swiper-slide">
+										<div class="s-advantages__item animate-item">
+											<div class="animate-item__inner"></div>
+											<div class="s-advantages__head">
+												<div class="row">
+													<div class="s-advantages__title col">Сертификат
+													</div>
+													<div class="s-advantages__img-wrap col-auto"><img class="swiper-lazy" src="#" data-src="img/@2x/sert-logo-1.png" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="s-advantages__body">
+												<p>Сертификат удовстоверяет, что ООО &laquo;Датекс Софт&raquo; присвоен статус <strong>Центр Реальной Автоматизации</strong>.</p><a class="s-advantages__link" href="img/@2x/blog-3.jpg" data-fancybox="sertGal"></a>
+											</div>
+										</div>
+									</div>
+									<div class="s-advantages__slide swiper-slide">
+										<div class="s-advantages__item animate-item">
+											<div class="animate-item__inner"></div>
+											<div class="s-advantages__head">
+												<div class="row">
+													<div class="s-advantages__title col">Сертификат
+													</div>
+													<div class="s-advantages__img-wrap col-auto"><img class="swiper-lazy" src="#" data-src="img/@2x/sert-logo-2.png" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="s-advantages__body">
+												<p>Сертификат удовстоверяет, что ООО «Датекс Софт» является <strong>официальным партнером «фирмы 1С»</strong>.</p><a class="s-advantages__link" href="img/@2x/blog-3.jpg" data-fancybox="sertGal"></a>
+											</div>
+										</div>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end s-advantages-->
+			<!-- start s-blog-->
+			<section class="s-blog section" id="s-blog">
+				<div class="section__inner"> 
+					<div class="container">
+						<div class="section-title">
+							<h2>последнее из блога</h2>
+						</div>
+						<div class="row">
+										<div class="s-blog__col col">
+											<div class="s-blog__item bg-wrap animate-item">
+												<div class="animate-item__inner"></div><img class="object-fit-js lazy img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/>
+												<div class="s-blog__label">
+													<div class="s-blog__label-circle" style="background-color:#81d742;">
+													</div>Статьи
+												</div>
+												<div class="s-blog__footer">
+													<div class="s-blog__title"><a href="#">Онлайн-касса для 1С:Фреш</a>
+													</div>
+													<div class="s-blog__text">9 декабря, 2019 <span class="s-blog__date"> 
+														<svg class="icon icon-comment ">
+															<use xlink:href="img/svg/sprite.svg#comment"></use>
+														</svg>3</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="s-blog__col col">
+											<div class="s-blog__item bg-wrap animate-item">
+												<div class="animate-item__inner"></div><img class="object-fit-js lazy img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/>
+												<div class="s-blog__label">
+													<div class="s-blog__label-circle" style="background-color:#81d742;">
+													</div>Статьи
+												</div>
+												<div class="s-blog__footer">
+													<div class="s-blog__title"><a href="#">Онлайн-касса для 1С:Фреш</a>
+													</div>
+													<div class="s-blog__text">9 декабря, 2019 <span class="s-blog__date"> 
+														<svg class="icon icon-comment ">
+															<use xlink:href="img/svg/sprite.svg#comment"></use>
+														</svg>3</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="s-blog__col col">
+											<div class="s-blog__item bg-wrap animate-item">
+												<div class="animate-item__inner"></div><img class="object-fit-js lazy img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/>
+												<div class="s-blog__label">
+													<div class="s-blog__label-circle" style="background-color:#edb63d;">
+													</div>Автоматизация бизнеса
+												</div>
+												<div class="s-blog__footer">
+													<div class="s-blog__title"><a href="#">автоматизация нового бизнеса</a>
+													</div>
+													<div class="s-blog__text">9 декабря, 2019 <span class="s-blog__date"> 
+														<svg class="icon icon-comment ">
+															<use xlink:href="img/svg/sprite.svg#comment"></use>
+														</svg>3</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="s-blog__col col">
+											<div class="s-blog__item bg-wrap animate-item">
+												<div class="animate-item__inner"></div><img class="object-fit-js lazy img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/>
+												<div class="s-blog__label">
+													<div class="s-blog__label-circle" style="background-color:#81d742;">
+													</div>Статьи
+												</div>
+												<div class="s-blog__footer">
+													<div class="s-blog__title"><a href="#">Онлайн-касса для 1С:Фреш</a>
+													</div>
+													<div class="s-blog__text">9 декабря, 2019 <span class="s-blog__date"> 
+														<svg class="icon icon-comment ">
+															<use xlink:href="img/svg/sprite.svg#comment"></use>
+														</svg>3</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="s-blog__col col">
+											<div class="s-blog__item bg-wrap animate-item">
+												<div class="animate-item__inner"></div><img class="object-fit-js lazy img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/>
+												<div class="s-blog__label">
+													<div class="s-blog__label-circle" style="background-color:#edb63d;">
+													</div>Автоматизация бизнеса
+												</div>
+												<div class="s-blog__footer">
+													<div class="s-blog__title"><a href="#">автоматизация нового бизнеса</a>
+													</div>
+													<div class="s-blog__text">9 декабря, 2019 <span class="s-blog__date"> 
+														<svg class="icon icon-comment ">
+															<use xlink:href="img/svg/sprite.svg#comment"></use>
+														</svg>3</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="s-blog__col col">
+											<div class="s-blog__item bg-wrap animate-item">
+												<div class="animate-item__inner"></div><img class="object-fit-js lazy img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/>
+												<div class="s-blog__label">
+													<div class="s-blog__label-circle" style="background-color:#edb63d;">
+													</div>Автоматизация бизнеса
+												</div>
+												<div class="s-blog__footer">
+													<div class="s-blog__title"><a href="#">автоматизация нового бизнеса</a>
+													</div>
+													<div class="s-blog__text">9 декабря, 2019 <span class="s-blog__date"> 
+														<svg class="icon icon-comment ">
+															<use xlink:href="img/svg/sprite.svg#comment"></use>
+														</svg>3</span>
+													</div>
+												</div>
+											</div>
+										</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end s-blog-->
 			<!-- start s-form-->
 			<div class="s-form section block-with-lazy" id="s-form">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>s-form</h2>
+				<div class="section__inner"> 
+					<div class="container">
+						<div class="s-form__title">получите консультацию эксперта по&nbsp;1с
+						</div>
+						<div class="row">
+							<div class="col-md-auto order-md-last">
+								<div class="s-form-sidebar">
+									<div class="s-form-sidebar__img-wrap"><img class="lazy" src="#" data-src="img/@2x/valentin.png" alt=""/>
+									</div>
+									<div class="s-form-sidebar__title"> шуба валентин
+									</div>
+									<div class="s-form-sidebar__text"> Сертифицированный специалист 1С
+									</div>
+									<div><a class="s-form-sidebar__tel" href="tel:8(800)500-57-48"> 
+										<svg class="icon icon-phone-receiver ">
+											<use xlink:href="img/svg/sprite.svg#phone-receiver"></use>
+										</svg>8 (800) 500-57-48</a>
+									</div>
+									<div><a class="s-form-sidebar__mail" href="mailto:info@datexsoft.ru ">info@datexsoft.ru  </a>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="form-wrap">
+									<form>
+										<input type="hidden" name="example-input-field"/>
+										<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+										<input class="utm_source" type="hidden" name="utm_source"/>
+										<input class="utm_term" type="hidden" name="utm_term"/>
+										<input class="utm_medium" type="hidden" name="utm_medium"/>
+										<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Ваше имя" name="text"/>
+												</div>
+												<!-- +e.input-wrap-->
+											</div>
+											<div class="col-lg-6">
+												<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel"/>
+												</div>
+												<!-- +e.input-wrap-->
+											</div>
+										</div>
+										<div class="form-wrap__input-wrap form-group"><textarea class="form-wrap__input form-control" placeholder="Расскажите о вашем проекте" name="textarea"></textarea>
+										</div>
+										<!-- +e.input-wrap-->
+										<div class="row align-items-center">
+											<div class="col-lg-6"><input class="form-wrap__btn" type="submit" value="Отправить"/>
+											</div>
+											<div class="col-lg-6">
+												<div class="form-wrap__polite">Нажимая кнопку &laquo;Отправить&raquo; вы&nbsp;соглашаетесь на&nbsp;обработку ваших персональных данных.
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div> 
+						<footer class="footer block-with-lazy">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<div class="soc"><a class="soc__item" href="№" target="_blank">
+											<svg class="icon icon-vk ">
+												<use xlink:href="img/svg/sprite.svg#vk"></use>
+											</svg></a><a class="soc__item" href="№" target="_blank">
+											<svg class="icon icon-instagram ">
+												<use xlink:href="img/svg/sprite.svg#instagram"></use>
+											</svg></a><a class="soc__item" href="№" target="_blank">
+											<svg class="icon icon-telegram ">
+												<use xlink:href="img/svg/sprite.svg#telegram"></use>
+											</svg></a><a class="soc__item" href="№" target="_blank">
+											<svg class="icon icon-twitter ">
+												<use xlink:href="img/svg/sprite.svg#twitter"></use>
+											</svg></a>
+										</div>
+									</div>
+									<div class="col-lg-4 order-lg-first">© Datexsoft 2020. Все права защищены.</div>
+									<div class="footer__col col-lg-4"><a href="#">Политика конфиденциальности</a>
+									</div>
+								</div>
+							</div>
+						</footer>
 					</div>
-					<div class="row"></div>
 				</div>
 			</div>
 			<!-- end s-form-->
-			<!-- start s-contact-->
-			<div class="s-contact section block-with-lazy" id="s-contact">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>s-contact</h2>
-					</div>
-					<div class="row"></div>
-				</div>
-			</div>
-			<!-- end s-contact-->
-			<footer class="footer block-with-lazy">
-				<div class="container">
-					<h2>footer</h2>
-				</div>
-			</footer>
 		</div>
 		<div class="d-none">
 			<div class="form-wrap modal-win modal-form" id="modal-call">
@@ -146,9 +913,7 @@
 					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
 					</div>
 					<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Рассчитать"/>
-					<div class="form-wrap__polite">
-						<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
-						</label>
+					<div class="form-wrap__polite">Нажимая кнопку &laquo;Отправить&raquo; вы&nbsp;соглашаетесь на&nbsp;обработку ваших персональных данных.
 					</div>
 				</form>
 			</div>
@@ -165,7 +930,7 @@
 		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 		<!-- modal libs-->
 		<!-- slider libs-->
-		<script src="libs/slick-carousel/slick/slick.min.js"></script>
+		<script src="libs/swiper/js/swiper.min.js"></script>
 		<!-- /slider libs-->
 		<!-- for svg libs-->
 		<script src="libs/svg4everybody/svg4everybody.min.js"></script>

@@ -1,0 +1,54 @@
+mixin s-cases()
+	// start s-cases
+	+b.SECTION.s-cases.section#s-cases&attributes(attributes)
+		.section__inner
+			.container
+				+b.section-title
+					.row
+						.col
+							h2 реализованные проекты
+						.col-auto
+							.swiper-pagination
+				+e.slider--js.swiper-container
+					.swiper-wrapper
+						- for (var x = 0; x < 4; x++)
+							+e.slide.swiper-slide
+								+e.item.bg-wrap
+									+e.inner
+										img.object-fit-js.img-bg.swiper-lazy(src="#" data-src="img/@2x/project-bg.png", alt="")
+										.row
+											+e.col.col-lg-auto
+												.row
+													+e.inner-col.col-lg-12.col-md-auto
+														+e.logo
+															img.swiper-lazy(src="#" data-src="img/@2x/project-logo.png", alt="")
+														+e.img-wrap
+															img.swiper-lazy(src="#" data-src="img/@2x/project-img.png", alt="")
+													.col-lg-12.col.text-lg-center.text-left
+														.d-lg-none
+															+e.title Замания - семейный парк развлечений
+															p Крупнейший детский развлекательный центр в Москве и в областях.
+
+														.d-md-block.d-none
+															+e.btn(href="#")
+																+icon("link-symbol")
+																| zamania.ru
+											.col
+												.d-none.d-lg-block
+													+e.title Замания - семейный парк развлечений
+													p Крупнейший детский развлекательный центр в Москве и в областях.
+												+e.labels
+													+e.labels-item Перевод на 1С-Битрикс: Enterprise
+													+e.labels-item Разработка b2b портала
+													+e.labels-item Техническое сопровождение
+												ul
+													li 39 000 товарных позиций;
+													li ГЕО-зависимые цены и акции для 25 городов;
+													li Единая бонусная система для офлайн- и онлайн и покупателей в режиме real-time;
+													li Обеспечение стабильной работы высоконагруженного сервиса;
+													li Единая бонусная система для офлайн- и онлайн и покупателей в режиме real-time.
+										.d-md-none.text-center
+											+e.btn(href="#")
+												+icon("link-symbol")
+												| zamania.ru
+	// end s-cases

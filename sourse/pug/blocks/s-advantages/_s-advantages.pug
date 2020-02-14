@@ -1,0 +1,34 @@
+mixin s-advantages()
+	// start s-advantages
+	+b.SECTION.s-advantages.section#s-advantages&attributes(attributes)
+		.section__inner 
+			.container
+				+b.section-title
+					.row
+						.col
+							h2 достижения
+						.col-auto
+							.swiper-pagination
+				+e.slider--js.swiper-container
+					.swiper-wrapper
+						mixin item(i,t)
+							+e.slide.swiper-slide
+								+e.item.animate-item
+									.animate-item__inner
+									+e.head
+										.row
+										
+											+e.title.col Сертификат
+											+e.img-wrap.col-auto
+												img.swiper-lazy(src="#" data-src=`img/@2x/sert-logo-${i}.png`, alt="")
+									+e.body
+										if block
+											block
+										else
+											p Сертификат удовстоверяет, что ООО &laquo;Датекс Софт&raquo; присвоен статус #[strong Центр Реальной Автоматизации].
+										+e.link(href="img/@2x/blog-3.jpg" data-fancybox="sertGal")
+						- for (var x = 0; x < 6; x++)
+							+item("1",'')
+							+item("2",'')
+								p Сертификат удовстоверяет, что ООО «Датекс Софт» является #[strong официальным партнером «фирмы 1С»].
+	// end s-advantages

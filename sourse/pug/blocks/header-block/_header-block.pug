@@ -1,7 +1,25 @@
 mixin header-block()
 	// start header-block
-	+b.header-block#header-block
-		.container
-			h1 header-block
-			.row
+	+b.header-block.section#header-block.bg-wrap
+		+pic('header-bg.png','bg')(class="picture-bg")
+		.section__inner
+			+e.container: .container
+				.row.justify-content-center
+					+e.text-block.col-md-6.col-auto
+						h1 
+							span DATEX SOFT 
+							span официальный 
+							span партнер&nbsp;1с 
+						+e.text.d-none.d-md-block Команда экспертов в&nbsp;сфере автоматизации бизнеса.
+					.col-md-6.col-auto
+						+e.IMG.logo-img(src="img/@2x/d.png" alt="")
+				+e.text.d-md-none Команда экспертов в&nbsp;сфере автоматизации бизнеса.
+			+e.clients
+				.container
+					+e.clients-title Наши клиенты:
+					+e.slider--js.swiper-container
+						.swiper-wrapper
+							- for (var x = 1; x < 7; x++)
+								+e.slide.swiper-slide
+									img(src=`img/@2x/logo-${x}.png`, alt="")
 	// end header-block
