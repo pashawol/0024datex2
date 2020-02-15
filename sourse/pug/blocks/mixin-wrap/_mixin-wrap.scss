@@ -1,7 +1,11 @@
  .soc {
  	margin: 0 rem(-20px);
  	display: flex;
- 	justify-content: center;
+
+ 	@include media-breakpoint-up(md) {
+
+ 		justify-content: center;
+ 	}
 
  	@include media-breakpoint-up(lg) {
  		margin-bottom: 0;

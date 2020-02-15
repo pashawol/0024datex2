@@ -1,7 +1,8 @@
 .header-block {
 	position: relative;
+	width: 100%;
 
-	@include media-breakpoint-down(xs) {
+	@include media-breakpoint-down(sm) {
 
 		min-height: calc(100vh - 70px);
 	}
@@ -13,6 +14,7 @@
 
 		&__inner {
 			display: table-cell;
+			vertical-align: middle;
 		}
 	}
 

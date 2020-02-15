@@ -2,8 +2,15 @@
   @include media-breakpoint-up(lg) {
 
     padding-top: 0;
+    text-align: left;
   }
 
+  @include media-breakpoint-up(md) {
+
+    text-align: center;
+  }
+
+  text-align: left;
   padding-top: 60px;
   // padding-bottom: rem(60);
 
@@ -24,7 +31,6 @@
     text-align: left;
   }
 
-  text-align: center;
 
   &__col {
 

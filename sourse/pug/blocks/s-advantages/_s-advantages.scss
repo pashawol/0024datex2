@@ -35,6 +35,7 @@
 		.row {
 
 			align-items: center;
+			@include roww(5);
 		}
 
 		img {

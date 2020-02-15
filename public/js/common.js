@@ -68,19 +68,15 @@ var JSCCommon = {
 
 		_this.menuMobileLink.forEach(function (element) {
 			element.addEventListener('click', function (e) {
-				console.log(element);
-
 				_this.closeMenu();
 			});
-		});
+		}); // document.addEventListener('mouseup', function (event) {
+		// 	let container = event.target.closest(".menu-mobile--js.active"); // (1)
+		// 	if (!container) {
+		// 		_this.closeMenu();
+		// 	}
+		// });
 
-		document.addEventListener('mouseup', function (event) {
-			var container = event.target.closest(".menu-mobile--js.active"); // (1)
-
-			if (!container) {
-				_this.closeMenu();
-			}
-		});
 	},
 	// /mobileMenu
 	// табы  . 
@@ -191,38 +187,60 @@ function eventHandler() {
 		} // spaceBetween: 30, 
 
 	});
-	var advSl = new Swiper('.s-advantages__slider--js', {
-		slidesPerView: 1,
-		spaceBetween: 30,
-		// watchOverflow: true,
-		// spaceBetween: 0,
-		lazy: {
-			loadPrevNext: true,
-			preloadImages: false
-		},
-		pagination: {
-			el: $('.s-advantages .swiper-pagination'),
-			type: 'bullets',
-			clickable: true // dynamicBullets: true,
+	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
-		},
-		// spaceBetween: 30, 
-		breakpoints: {
-			// when window width is >= 320px
-			576: {
-				slidesPerView: 2,
-				spaceBetween: 20
+	if (isIE11) {
+		var advSl = new Swiper('.s-advantages__slider--js', {
+			slidesPerView: 4,
+			spaceBetween: 20,
+			// watchOverflow: true,
+			// spaceBetween: 0,
+			lazy: {
+				loadPrevNext: true,
+				preloadImages: false
 			},
-			// when window width is >= 480px
-			992: {
-				slidesPerView: 3
-			},
-			// when window width is >= 640px
-			1200: {
-				slidesPerView: 4
+			pagination: {
+				el: $('.s-advantages .swiper-pagination'),
+				type: 'bullets',
+				clickable: true // dynamicBullets: true,
+
 			}
-		}
-	});
+		});
+	} else {
+		var advSl = new Swiper('.s-advantages__slider--js', {
+			slidesPerView: 1,
+			spaceBetween: 20,
+			// watchOverflow: true,
+			// spaceBetween: 0,
+			lazy: {
+				loadPrevNext: true,
+				preloadImages: false
+			},
+			pagination: {
+				el: $('.s-advantages .swiper-pagination'),
+				type: 'bullets',
+				clickable: true // dynamicBullets: true,
+
+			},
+			breakpoints: {
+				// when window width is >= 320px
+				576: {
+					slidesPerView: 2,
+					spaceBetween: 20
+				},
+				// when window width is >= 480px
+				992: {
+					spaceBetween: 30,
+					slidesPerView: 3
+				},
+				// when window width is >= 640px
+				1200: {
+					spaceBetween: 30,
+					slidesPerView: 4
+				}
+			}
+		});
+	}
 }
 
 ;
