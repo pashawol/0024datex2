@@ -58,11 +58,40 @@ body {
 		top: 0;
 		z-index: 999;
 
-		&::before {
-			z-index: 999;
-			opacity: 0.76;
+
+	}
+}
+
+body {
+
+	&.fancybox-active,
+	&.fixed {
+
+		.when-menu-open,
+		.s-ways,
+		.s-cases,
+		.s-advantages,
+		.s-blog,
+		.s-form {
+			@include mt;
+			opacity: 0;
+			pointer-events: none;
+		}
+
+	}
+
+	&.fancybox-active {
+
+		.menu-mobile,
+		.top-line {
+			opacity: 0;
+			pointer-events: none;
 		}
 	}
+}
+
+.fancybox-bg {
+	display: none !important;
 }
 
 .mono {
@@ -729,4 +758,31 @@ h2 {
 	// to {
 	// 	opacity: 0
 	// }
+}
+
+.browsehappy {
+	position: absolute;
+	width: 100%;
+	z-index: 1000;
+	background: #000;
+	min-height: 100px;
+	font-size: 20px;
+}
+
+
+@include media-breakpoint-up(lg) {
+
+	.wow {
+		visibility: hidden;
+	}
+}
+
+.visible {
+	visibility: visible !important;
+}
+
+.rellax {
+	@include media-breakpoint-down(lg) {
+		transform: translate3d(0px, 0, 0px) !important;
+	}
 }

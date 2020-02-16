@@ -4,8 +4,8 @@ mixin s-form()
 		.section__inner 
 			.container
 				
-				+e.title получите консультацию эксперта по&nbsp;1с
-				.row
+				+e.title(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1  }s`) получите консультацию эксперта по&nbsp;1с
+				.row(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.2  }s`)
 					.col-md-auto.order-md-last
 						+b.s-form-sidebar
 							+e.img-wrap

@@ -56,7 +56,9 @@
     "jquery": "^3.4.1",
     "object-fit-images": "^3.2.4",
     "picturefill": "^3.0.3",
+    "rellax": "^1.12.1",
     "slick-carousel": "^1.8.1",
+    "smooth-parallax": "^1.1.2",
     "svg4everybody": "^2.1.9",
     "swiper": "^5.3.1",
     "wowjs": "^1.1.3"

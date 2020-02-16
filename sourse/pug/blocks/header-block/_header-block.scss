@@ -1,6 +1,8 @@
 .header-block {
 	position: relative;
 	width: 100%;
+	position: relative;
+	overflow: hidden;
 
 	@include media-breakpoint-down(sm) {
 
@@ -8,6 +10,10 @@
 	}
 
 	display: table;
+
+	&__slider {
+		overflow: inherit;
+	}
 
 	.section {
 
@@ -127,12 +133,11 @@
 		left: 0;
 		width: 100%;
 
-		@include media-breakpoint-up(xxl) {
+		@include media-breakpoint-up(xxl) {}
 
-			padding-bottom: rem(75);
-		}
+		padding-bottom: rem(105);
 
-		padding-bottom: rem(75/2);
+		// padding-bottom: rem(75);
 	}
 
 	&__clients-title {

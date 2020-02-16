@@ -8,27 +8,33 @@ const JSCCommon = {
 	modalCall() {
 		$(".link-modal").fancybox({
 			arrows: false,
-			infobar: false,
+			infobar: true,
 			touch: false,
 			type: 'inline',
+			autoFocus: false,
+			// closeExisting: true,
 			i18n: {
 				en: {
 					CLOSE: "Закрыть",
 					NEXT: "Вперед",
 					PREV: "Назад",
-					// PLAY_START: "Start slideshow",
-					// PLAY_STOP: "Pause slideshow",
-					// FULL_SCREEN: "Full screen",
-					// THUMBS: "Thumbnails",
-					// DOWNLOAD: "Download",
-					// SHARE: "Share",
-					// ZOOM: "Zoom"
 				},
 			},
 		});
 		$(".modal-close-js").click(function () {
 			$.fancybox.close();
 		})
+	},
+	paddRight(elem) {
+		var div = document.createElement('div');
+		div.style.overflowY = 'scroll';
+		div.style.width = '50px';
+		div.style.height = '50px';
+		document.body.append(div);
+		var padd = div.offsetWidth - div.clientWidth; // console.log(1);
+
+		$(elem).css("marginRight", padd);
+		div.remove();
 	},
 	// /magnificPopupCall
 	toggleMenu() {
@@ -42,6 +48,18 @@ const JSCCommon = {
 				_this.menuMobile.classList.toggle("active");
 				_this.body.classList.toggle("fixed");
 
+
+
+
+				if ($("body").hasClass("fixed")) {
+
+					JSCCommon.paddRight('body ');
+				} else {
+					$("body ").css("marginRight", 0);
+
+				}
+
+				// paddRight('.menu-mobile__inner');
 				return false;
 			});
 		});
@@ -70,26 +88,10 @@ const JSCCommon = {
 
 			});
 		})
-		// document.addEventListener('mouseup', function (event) {
-		// 	let container = event.target.closest(".menu-mobile--js.active"); // (1)
-		// 	if (!container) {
-		// 		_this.closeMenu();
 
-		// 	}
-		// });
 	},
 	// /mobileMenu
 
-	// табы  . 
-	tabscostume(tab) {
-		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-			$(this)
-				.addClass('active').siblings().removeClass('active')
-				.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-				.eq($(this).index()).show().addClass('active');
-
-		});
-	},
 	// /табы  
 	inputMask() {
 		// mask for input
@@ -100,6 +102,7 @@ const JSCCommon = {
 };
 
 function eventHandler() {
+	JSCCommon.paddRight('.top-line');
 	// полифил для object-fit
 	objectFitImages();
 	// Picture element HTML5 shiv
@@ -109,66 +112,24 @@ function eventHandler() {
 
 	JSCCommon.modalCall();
 
-	JSCCommon.tabscostume('tabs');
-
 	JSCCommon.mobileMenu();
 
 	JSCCommon.inputMask();
 
-	// JSCCommon.CustomInputFile();
-	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/DATEX_HOME.jpg);"></div>')
-	// /добавляет подложку для pixel perfect
+	var header = $('.top-line'),
+		scrollPrev = 0;
 
+	$(window).scroll(function () {
+		var scrolled = $(window).scrollTop();
 
-
-	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), function() {
-
-	// 	if (this.href == url) {
-	// 		if ($(this).hasClass("top-nav__link") == true) {
-
-	// 			$(this).addClass('top-nav__link-active');
-	// 		}
-	// 		if ($(this).hasClass("footer__link") == true) {
-
-	// 			$(this).addClass('footer__link-active');
-	// 		} 
-	// 	}; 
-	// }); 
-
-	// /закрыть/открыть мобильное меню
-
-	function heightses() {
-
-		const w = $(window).width();
-
-		// $(".main-wrapper").css("margin-bottom", $('footer').height())
-		// $(".otz__item .text-wrap ").height('auto').equalHeights();
-		// 
-		// скрывает моб меню
-
-		const topH = $("header ").innerHeight();
-
-		$(window).scroll(function () {
-			if ($(window).scrollTop() > topH) {
-				$('.top-nav  ').addClass('fixed');
-			} else {
-				$('.top-nav  ').removeClass('fixed');
-			}
-		});
-		// конец добавил
-		if (window.matchMedia("(min-width: 992px)").matches) {
-			JSCCommon.closeMenu();
+		if (scrolled > 100 && scrolled > scrollPrev) {
+			header.addClass('out');
+		} else {
+			header.removeClass('out').removeClass('wow').addClass('visible');
 		}
-	}
-
-	$(window).resize(function () {
-		heightses();
-
+		scrollPrev = scrolled;
 	});
 
-	heightses();
 
 	// листалка по стр
 	$(" .top-nav li a, .scroll-link").click(function () {
@@ -180,18 +141,6 @@ function eventHandler() {
 		return false;
 	});
 
-
-	const defaultSlide = {
-		speed: 600,
-		infinite: true,
-		arrows: true,
-		mobileFirst: true,
-		// prevArrow: arrr2,
-		// nextArrow: arrl2,
-		// autoplay: true,
-		autoplaySpeed: 6000,
-		lazyLoad: 'progressive',
-	};
 	var headSl = new Swiper('.header-block__slider--js', {
 		slidesPerView: 'auto',
 		watchOverflow: true,
@@ -219,24 +168,28 @@ function eventHandler() {
 	});
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+	var defaultSl = {
+		spaceBetween: 20,
+		// watchOverflow: true,
+		// spaceBetween: 0,
+		lazy: {
+			loadPrevNext: true,
+			preloadImages: false,
+		},
 
+		pagination: {
+			el: $('.s-advantages .swiper-pagination'),
+			type: 'bullets',
+			clickable: true,
+			// dynamicBullets: true,
+		},
+
+	}
 	if (isIE11) {
+		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
 		var advSl = new Swiper('.s-advantages__slider--js', {
 			slidesPerView: 4,
-			spaceBetween: 20,
-			// watchOverflow: true,
-			// spaceBetween: 0,
-			lazy: {
-				loadPrevNext: true,
-				preloadImages: false,
-			},
-
-			pagination: {
-				el: $('.s-advantages .swiper-pagination'),
-				type: 'bullets',
-				clickable: true,
-				// dynamicBullets: true,
-			},
+			...defaultSl,
 
 		});
 	}
@@ -245,20 +198,7 @@ function eventHandler() {
 
 		var advSl = new Swiper('.s-advantages__slider--js', {
 			slidesPerView: 1,
-			spaceBetween: 20,
-			// watchOverflow: true,
-			// spaceBetween: 0,
-			lazy: {
-				loadPrevNext: true,
-				preloadImages: false,
-			},
-
-			pagination: {
-				el: $('.s-advantages .swiper-pagination'),
-				type: 'bullets',
-				clickable: true,
-				// dynamicBullets: true,
-			},
+			...defaultSl,
 			breakpoints: {
 
 				// when window width is >= 320px
@@ -279,6 +219,16 @@ function eventHandler() {
 			}
 		});
 	}
+
+	// анимация  при скролле 
+	var rellax = new Rellax('.rellax', {
+		// breakpoints: [576, 768, 1201],
+		// center: true
+	});
+	var wow = new WOW({
+		mobile: false
+	});
+	wow.init();
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

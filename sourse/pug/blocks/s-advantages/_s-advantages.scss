@@ -1,6 +1,15 @@
 // start .s-advantages
 .s-advantages {
+	position: relative;
+	overflow: hidden;
+	max-width: 100%;
+
 	// padding-top: 289px !important;
+	&__slider {
+		// overflow: inherit;
+	}
+
+
 
 	&__item {}
 

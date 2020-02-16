@@ -1,5 +1,11 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
@@ -9,27 +15,33 @@ var JSCCommon = {
 	modalCall: function modalCall() {
 		$(".link-modal").fancybox({
 			arrows: false,
-			infobar: false,
+			infobar: true,
 			touch: false,
 			type: 'inline',
+			autoFocus: false,
+			// closeExisting: true,
 			i18n: {
 				en: {
 					CLOSE: "Закрыть",
 					NEXT: "Вперед",
-					PREV: "Назад" // PLAY_START: "Start slideshow",
-					// PLAY_STOP: "Pause slideshow",
-					// FULL_SCREEN: "Full screen",
-					// THUMBS: "Thumbnails",
-					// DOWNLOAD: "Download",
-					// SHARE: "Share",
-					// ZOOM: "Zoom"
-
+					PREV: "Назад"
 				}
 			}
 		});
 		$(".modal-close-js").click(function () {
 			$.fancybox.close();
 		});
+	},
+	paddRight: function paddRight(elem) {
+		var div = document.createElement('div');
+		div.style.overflowY = 'scroll';
+		div.style.width = '50px';
+		div.style.height = '50px';
+		document.body.append(div);
+		var padd = div.offsetWidth - div.clientWidth; // console.log(1);
+
+		$(elem).css("marginRight", padd);
+		div.remove();
 	},
 	// /magnificPopupCall
 	toggleMenu: function toggleMenu() {
@@ -44,6 +56,13 @@ var JSCCommon = {
 				_this.menuMobile.classList.toggle("active");
 
 				_this.body.classList.toggle("fixed");
+
+				if ($("body").hasClass("fixed")) {
+					JSCCommon.paddRight('body ');
+				} else {
+					$("body ").css("marginRight", 0);
+				} // paddRight('.menu-mobile__inner');
+
 
 				return false;
 			});
@@ -70,21 +89,9 @@ var JSCCommon = {
 			element.addEventListener('click', function (e) {
 				_this.closeMenu();
 			});
-		}); // document.addEventListener('mouseup', function (event) {
-		// 	let container = event.target.closest(".menu-mobile--js.active"); // (1)
-		// 	if (!container) {
-		// 		_this.closeMenu();
-		// 	}
-		// });
-
-	},
-	// /mobileMenu
-	// табы  . 
-	tabscostume: function tabscostume(tab) {
-		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-			$(this).addClass('active').siblings().removeClass('active').closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active').eq($(this).index()).show().addClass('active');
 		});
 	},
+	// /mobileMenu
 	// /табы  
 	inputMask: function inputMask() {
 		// mask for input
@@ -94,56 +101,29 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	// полифил для object-fit
+	JSCCommon.paddRight('.top-line'); // полифил для object-fit
+
 	objectFitImages(); // Picture element HTML5 shiv
 
 	document.createElement("picture"); // для свг
 
 	svg4everybody({});
 	JSCCommon.modalCall();
-	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
-	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
-	// добавляет подложку для pixel perfect
+	JSCCommon.inputMask();
+	var header = $('.top-line'),
+			scrollPrev = 0;
+	$(window).scroll(function () {
+		var scrolled = $(window).scrollTop();
 
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/DATEX_HOME.jpg);"></div>'); // /добавляет подложку для pixel perfect
-	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), function() {
-	// 	if (this.href == url) {
-	// 		if ($(this).hasClass("top-nav__link") == true) {
-	// 			$(this).addClass('top-nav__link-active');
-	// 		}
-	// 		if ($(this).hasClass("footer__link") == true) {
-	// 			$(this).addClass('footer__link-active');
-	// 		} 
-	// 	}; 
-	// }); 
-	// /закрыть/открыть мобильное меню
-
-	function heightses() {
-		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
-		// $(".otz__item .text-wrap ").height('auto').equalHeights();
-		// 
-		// скрывает моб меню
-
-		var topH = $("header ").innerHeight();
-		$(window).scroll(function () {
-			if ($(window).scrollTop() > topH) {
-				$('.top-nav  ').addClass('fixed');
-			} else {
-				$('.top-nav  ').removeClass('fixed');
-			}
-		}); // конец добавил
-
-		if (window.matchMedia("(min-width: 992px)").matches) {
-			JSCCommon.closeMenu();
+		if (scrolled > 100 && scrolled > scrollPrev) {
+			header.addClass('out');
+		} else {
+			header.removeClass('out').removeClass('wow').addClass('visible');
 		}
-	}
 
-	$(window).resize(function () {
-		heightses();
-	});
-	heightses(); // листалка по стр
+		scrollPrev = scrolled;
+	}); // листалка по стр
 
 	$(" .top-nav li a, .scroll-link").click(function () {
 		var elementClick = $(this).attr("href");
@@ -153,17 +133,6 @@ function eventHandler() {
 		}, 1100);
 		return false;
 	});
-	var defaultSlide = {
-		speed: 600,
-		infinite: true,
-		arrows: true,
-		mobileFirst: true,
-		// prevArrow: arrr2,
-		// nextArrow: arrl2,
-		// autoplay: true,
-		autoplaySpeed: 6000,
-		lazyLoad: 'progressive'
-	};
 	var headSl = new Swiper('.header-block__slider--js', {
 		slidesPerView: 'auto',
 		watchOverflow: true,
@@ -188,40 +157,31 @@ function eventHandler() {
 
 	});
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+	var defaultSl = {
+		spaceBetween: 20,
+		// watchOverflow: true,
+		// spaceBetween: 0,
+		lazy: {
+			loadPrevNext: true,
+			preloadImages: false
+		},
+		pagination: {
+			el: $('.s-advantages .swiper-pagination'),
+			type: 'bullets',
+			clickable: true // dynamicBullets: true,
+
+		}
+	};
 
 	if (isIE11) {
-		var advSl = new Swiper('.s-advantages__slider--js', {
-			slidesPerView: 4,
-			spaceBetween: 20,
-			// watchOverflow: true,
-			// spaceBetween: 0,
-			lazy: {
-				loadPrevNext: true,
-				preloadImages: false
-			},
-			pagination: {
-				el: $('.s-advantages .swiper-pagination'),
-				type: 'bullets',
-				clickable: true // dynamicBullets: true,
-
-			}
-		});
+		$("body").prepend("<p   class=\"browsehappy container\">\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u0432\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0435 \u0443\u0441\u0442\u0430\u0440\u0435\u0432\u0448\u0438\u0439 \u0431\u0440\u0430\u0443\u0437\u0435\u0440. \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, <a href=\"http://browsehappy.com/\" target=\"_blank\">\u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448 \u0431\u0440\u0430\u0443\u0437\u0435\u0440</a>, \u0447\u0442\u043E\u0431\u044B \u0443\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C, \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u043E \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0430\u0435\u043C\u043E\u0433\u043E \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u0430 \u0438 \u043F\u043E\u0432\u044B\u0441\u0438\u0442\u044C \u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u044C.</p>");
+		var advSl = new Swiper('.s-advantages__slider--js', _objectSpread({
+			slidesPerView: 4
+		}, defaultSl));
 	} else {
-		var advSl = new Swiper('.s-advantages__slider--js', {
-			slidesPerView: 1,
-			spaceBetween: 20,
-			// watchOverflow: true,
-			// spaceBetween: 0,
-			lazy: {
-				loadPrevNext: true,
-				preloadImages: false
-			},
-			pagination: {
-				el: $('.s-advantages .swiper-pagination'),
-				type: 'bullets',
-				clickable: true // dynamicBullets: true,
-
-			},
+		var advSl = new Swiper('.s-advantages__slider--js', _objectSpread({
+			slidesPerView: 1
+		}, defaultSl, {
 			breakpoints: {
 				// when window width is >= 320px
 				576: {
@@ -239,8 +199,17 @@ function eventHandler() {
 					slidesPerView: 4
 				}
 			}
-		});
-	}
+		}));
+	} // анимация  при скролле 
+
+
+	var rellax = new Rellax('.rellax', {// breakpoints: [576, 768, 1201],
+		// center: true
+	});
+	var wow = new WOW({
+		mobile: false
+	});
+	wow.init();
 }
 
 ;

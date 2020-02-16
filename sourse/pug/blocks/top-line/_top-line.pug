@@ -1,6 +1,6 @@
 mixin top-line()
 	// start .top-line
-	+b.top-line.block-with-lazy
+	+b.top-line.block-with-lazy(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.5  }s`)
 		.container
 			.row
 				.col
@@ -13,11 +13,11 @@ mixin top-line()
 						+icon("flag")
 						| Санкт-Петербург
 				.col-auto
-					+e.link--tel(href="+7(846)3004840")
+					+e.link--tel(href="tel:+7(846)3004840")
 						+icon("phone-receiver")
 						span.d-none.d-md-inline +7 (846) 300 48 40
 				.col-auto.d-none.d-md-block
-					+e.btn(href="#") Заказать звонок
+					+e.btn.link-modal(href="#modal-call") Заказать звонок
 				.col-auto
 					+b.toggle-menu-mobile--js
 						span

@@ -3,13 +3,13 @@ mixin s-cases()
 	+b.SECTION.s-cases.section#s-cases&attributes(attributes)
 		.section__inner
 			.container
-				+b.section-title
+				+b.section-title(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1  }s`)
 					.row
 						.col
 							h2 реализованные проекты
 						.col-auto
 							.swiper-pagination
-				+e.slider--js.swiper-container
+				+e.slider--js.swiper-container(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.2  }s`)
 					.swiper-wrapper
 						- for (var x = 0; x < 4; x++)
 							+e.slide.swiper-slide

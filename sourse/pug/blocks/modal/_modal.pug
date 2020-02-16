@@ -34,13 +34,20 @@ mixin modal()
 	.d-none
 		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
 			.text-center
-				+e.title.h3.ttu Обратный звонок
-				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
+				+e.title  заказать звонок специалиста для&nbsp;консультации
 			+input("Ваше Имя")(required) 
 			+input("Ваш телефон","tel")(required)
-			//- +input("email","Ваше email")(required)
-			//- +text( "Комментарий")
-			+e.INPUT.btn(type="submit" value="Рассчитать") 
-			+polite()
+			+input("Расскажите о вашем проекте",'textarea')
+			.text-center
+				+e.INPUT.btn(type="submit" value="Отправить") 
+				+polite()
 		// #modal-call
+		
+		+b.form-wrap(id="modal-thanks" class="  modal-win  " )
+			.text-center
+				+e.title  спасибо за&nbsp;обращение!
+				p Наш специалист свяжется с&nbsp;Вами в&nbsp;ближайшее время.
+				+e.btn.modal-close-js(type="button") Закрыть
+		// #modal-thanks
+
 	// modal

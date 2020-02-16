@@ -10,13 +10,24 @@ mixin mob-mnu()
 	//- h1= dataJson['lala'] 
 	//- +b.toggle-menu-mobile--js.d-lg-none
 	//- 	span
-	+b.menu-mobile--js.d-lg-none
-		+b.toggle-menu-mobile--js
-			span
+	+b.menu-mobile--js
 		+e.inner
-		
-			+mnu()
-			.text-right
+			+e.table
+				+e.td
+					+e.menu-wrap
+						div(class="wow slideInLeft" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 2  }s`)
+							ul
+								li: a(href="#") программы 1с
+								li: a(href="#") торговое оборудование
+								li: a(href="#") аренда 1с
+								li: a(href="#") реальная автоматизация
+						+e.list2(class="wow slideInRight" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 2  }s`)
+							ul
+								li: a(href="#") Блог
+								li: a(href="#") О компании
+								li: a(href="#") Контакты  
+			+e.footer
+				+soc()
 	//  мобильное меню
 mixin top-nav() 
 	// start top-nav

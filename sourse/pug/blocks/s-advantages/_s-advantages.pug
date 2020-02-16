@@ -3,13 +3,13 @@ mixin s-advantages()
 	+b.SECTION.s-advantages.section#s-advantages&attributes(attributes)
 		.section__inner 
 			.container
-				+b.section-title
+				+b.section-title(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1  }s`)
 					.row
 						.col
 							h2 достижения
 						.col-auto
 							.swiper-pagination
-				+e.slider--js.swiper-container
+				+e.slider--js.swiper-container(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.2  }s`)
 					.swiper-wrapper
 						mixin item(i,t)
 							+e.slide.swiper-slide

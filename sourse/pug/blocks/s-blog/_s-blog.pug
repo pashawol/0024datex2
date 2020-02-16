@@ -3,12 +3,13 @@ mixin s-blog()
 	+b.SECTION.s-blog.section#s-blog&attributes(attributes)
 		.section__inner  
 			.container
-				+b.section-title
+				+b.section-title(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1  }s`)
 					h2 последнее из блога
 					
-				.row
-					mixin item(l, color, t)
+				.row(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.2  }s`)
+					mixin item(l, color, t,i)
 						+e.col.col
+							//- (class="rellax" data-rellax-desktop-speed=`${1 + i}`  data-rellax-percentage=`${.3 + i * .1} ` )
 							+e.item.bg-wrap.animate-item
 								.animate-item__inner
 								img.object-fit-js.lazy.img-bg(src="#" data-src="img/@2x/blog-1.jpg", alt="")
@@ -25,13 +26,13 @@ mixin s-blog()
 										+e.SPAN.date 
 											+icon("comment")
 											| 3
-					+item("Статьи","#81d742")
-					+item("Статьи","#81d742")
-					+item("Автоматизация бизнеса","#edb63d")
+					+item("Статьи","#81d742",'1')
+					+item("Статьи","#81d742",'2')
+					+item("Автоматизация бизнеса","#edb63d",'3')
 						a(href="#") автоматизация нового бизнеса
-					+item("Статьи","#81d742")
-					+item("Автоматизация бизнеса","#edb63d")
+					+item("Статьи","#81d742",'4')
+					+item("Автоматизация бизнеса","#edb63d",'5')
 						a(href="#") автоматизация нового бизнеса
-					+item("Автоматизация бизнеса","#edb63d")
+					+item("Автоматизация бизнеса","#edb63d",'6')
 						a(href="#") автоматизация нового бизнеса
 	// end s-blog

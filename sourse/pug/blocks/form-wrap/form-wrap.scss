@@ -1,7 +1,15 @@
 .form-wrap {
+	max-width: rem(580);
+
+
 	&__input-wrap {
 		// @extend .form-group;
 		margin-bottom: rem(40);
+	}
+
+	&__title {
+		@extend .mono;
+		@extend .h1;
 	}
 
 	&__input {

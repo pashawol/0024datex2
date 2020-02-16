@@ -21,6 +21,7 @@
 		<meta name="theme-color" content="#db1e32">
 		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
+		<link rel="stylesheet" href="libs/animate.css/animate.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
@@ -28,37 +29,51 @@
 		<div id="stars2"></div>
 		<div id="stars3"></div>
 		<div class="main-wrapper">
-			<div class="menu-mobile menu-mobile--js d-lg-none">
-				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
-				</div>
+			<div class="menu-mobile menu-mobile--js">
 				<div class="menu-mobile__inner">
-					<ul class="menu-mobile__nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="/" itemprop="url">Главная</a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Услуги  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Подбор септика   </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Акции </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> О компании  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Доставка и оплата </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Клиентам  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Наши работы   </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Контакты </a>
-						</li>
-					</ul>
-					<div class="text-right"></div>
+					<div class="menu-mobile__table">
+						<div class="menu-mobile__td">
+							<div class="menu-mobile__menu-wrap">
+								<div class="wow slideInLeft" data-wow-duration="0.6s" data-wow-delay="0.6s">
+									<ul>
+										<li><a href="#">программы 1с</a></li>
+										<li><a href="#">торговое оборудование</a></li>
+										<li><a href="#">аренда 1с</a></li>
+										<li><a href="#">реальная автоматизация</a></li>
+									</ul>
+								</div>
+								<div class="menu-mobile__list2 wow slideInRight" data-wow-duration="0.6s" data-wow-delay="0.6s">
+									<ul>
+										<li><a href="#">Блог</a></li>
+										<li><a href="#">О компании</a></li>
+										<li><a href="#">Контакты  </a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="menu-mobile__footer">
+						<div class="soc"><a class="soc__item" href="№" target="_blank">
+							<svg class="icon icon-vk ">
+								<use xlink:href="img/svg/sprite.svg#vk"></use>
+							</svg></a><a class="soc__item" href="№" target="_blank">
+							<svg class="icon icon-instagram ">
+								<use xlink:href="img/svg/sprite.svg#instagram"></use>
+							</svg></a><a class="soc__item" href="№" target="_blank">
+							<svg class="icon icon-telegram ">
+								<use xlink:href="img/svg/sprite.svg#telegram"></use>
+							</svg></a><a class="soc__item" href="№" target="_blank">
+							<svg class="icon icon-twitter ">
+								<use xlink:href="img/svg/sprite.svg#twitter"></use>
+							</svg></a>
+						</div>
+					</div>
 				</div>
 			</div>
 			<!--  мобильное меню-->
 			<header>
 				<!-- start .top-line-->
-				<div class="top-line block-with-lazy">
+				<div class="top-line block-with-lazy wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.44999999999999996s">
 					<div class="container">
 						<div class="row">
 							<div class="col">
@@ -72,12 +87,12 @@
 									<use xlink:href="img/svg/sprite.svg#flag"></use>
 								</svg>Санкт-Петербург</a>
 							</div>
-							<div class="col-auto"><a class="top-line__link top-line__link--tel" href="+7(846)3004840">
+							<div class="col-auto"><a class="top-line__link top-line__link--tel" href="tel:+7(846)3004840">
 								<svg class="icon icon-phone-receiver ">
 									<use xlink:href="img/svg/sprite.svg#phone-receiver"></use>
 								</svg><span class="d-none d-md-inline">+7 (846) 300 48 40</span></a>
 							</div>
-							<div class="col-auto d-none d-md-block"><a class="top-line__btn" href="#">Заказать звонок</a>
+							<div class="col-auto d-none d-md-block"><a class="top-line__btn link-modal" href="#modal-call">Заказать звонок</a>
 							</div>
 							<div class="col-auto">
 								<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
@@ -88,46 +103,48 @@
 				</div>
 				<!-- end .top-line-->
 				<!-- start header-block-->
-				<div class="header-block section bg-wrap" id="header-block">
-					<!-- picture-->
-					<picture class="lazy picture-bg"> 
-						<source srcset="#" data-srcset="img/@2x/header-bg.png" type="image/png" media="(min-width:576px)"/>
-						<source srcset="#" data-srcset="img/@1x/header-bg.png" type="image/png"/><img class="object-fit-js" src="#" data-src="img/@2x/header-bg.png" alt=""/>
-					</picture>
-					<!-- /picture-->
+				<div class="header-block section bg-wrap when-menu-open" id="header-block">
+					<div class="picture-bg wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.3s">
+						<!-- picture-->
+						<picture class="lazy"> 
+							<source srcset="#" data-srcset="img/@2x/header-bg.png" type="image/png" media="(min-width:576px)"/>
+							<source srcset="#" data-srcset="img/@1x/header-bg.png" type="image/png"/><img class="object-fit-js" src="#" data-src="img/@2x/header-bg.png" alt=""/>
+						</picture>
+						<!-- /picture-->
+					</div>
 					<div class="section__inner">
 						<div class="header-block__container">
 							<div class="container">
-								<div class="row justify-content-center">
+								<div class="row justify-content-center wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.6s">
 									<div class="header-block__text-block col-md-6 col-auto">
-										<h1> <span>DATEX SOFT </span><span>официальный </span><span>партнер&nbsp;1с </span></h1>
-										<div class="header-block__text d-none d-md-block">Команда экспертов в&nbsp;сфере автоматизации бизнеса.
+										<h1> <span class="rellax" data-rellax-desktop-speed="4" data-rellax-percentage="0.55">DATEX SOFT </span><span class="rellax" data-rellax-desktop-speed="3" data-rellax-percentage="0.45">официальный</span><span class="rellax" data-rellax-desktop-speed="2" data-rellax-percentage="0.35">партнер&nbsp;1с </span></h1>
+										<div class="header-block__text d-none d-md-block rellax" data-rellax-desktop-speed="1" data-rellax-percentage=".002">Команда экспертов в&nbsp;сфере автоматизации бизнеса.
 										</div>
 									</div>
-									<div class="col-md-6 col-auto"><img class="header-block__logo-img" src="img/@2x/d.png" alt="" role="presentation"/>
+									<div class="col-md-6 col-auto rellax" data-rellax-desktop-speed="4" data-rellax-percentage="0.4"><img class="header-block__logo-img" src="img/@2x/d.png" alt="" role="presentation"/>
 									</div>
 								</div>
 								<div class="header-block__text d-md-none">Команда экспертов в&nbsp;сфере автоматизации бизнеса.
 								</div>
 							</div>
 						</div>
-						<div class="header-block__clients">
+						<div class="header-block__clients wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.75s">
 							<div class="container">
-								<div class="header-block__clients-title">Наши клиенты:
+								<div class="header-block__clients-title rellax" data-rellax-desktop-speed="1" data-rellax-percentage="0.25">Наши клиенты:
 								</div>
 								<div class="header-block__slider header-block__slider--js swiper-container">
 									<div class="swiper-wrapper">
-										<div class="header-block__slide swiper-slide"><img src="img/@2x/logo-1.png" alt=""/>
+										<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-1.png" alt="" data-rellax-desktop-speed="1.2 " data-rellax-percentage="0.2631578947368421"/>
 										</div>
-										<div class="header-block__slide swiper-slide"><img src="img/@2x/logo-2.png" alt=""/>
+										<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-2.png" alt="" data-rellax-desktop-speed="1.7999999999999998 " data-rellax-percentage="0.2173913043478261"/>
 										</div>
-										<div class="header-block__slide swiper-slide"><img src="img/@2x/logo-3.png" alt=""/>
+										<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-3.png" alt="" data-rellax-desktop-speed="2.4 " data-rellax-percentage="0.18518518518518517"/>
 										</div>
-										<div class="header-block__slide swiper-slide"><img src="img/@2x/logo-4.png" alt=""/>
+										<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-4.png" alt="" data-rellax-desktop-speed="3 " data-rellax-percentage="0.16129032258064516"/>
 										</div>
-										<div class="header-block__slide swiper-slide"><img src="img/@2x/logo-5.png" alt=""/>
+										<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-5.png" alt="" data-rellax-desktop-speed="3.5999999999999996 " data-rellax-percentage="0.14285714285714285"/>
 										</div>
-										<div class="header-block__slide swiper-slide"><img src="img/@2x/logo-6.png" alt=""/>
+										<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-6.png" alt="" data-rellax-desktop-speed="4.2 " data-rellax-percentage="0.1282051282051282"/>
 										</div>
 									</div>
 								</div>
@@ -141,11 +158,11 @@
 			<section class="s-ways section" id="s-ways">
 				<div class="section__inner">
 					<div class="container">
-						<div class="section-title"> 
+						<div class="section-title rellax wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.3s" data-rellax-desktop-speed="1" data-rellax-percentage="0.6">
 							<h2>направления деятельности</h2>
 						</div>
-						<div class="row">
-										<div class="s-ways__col col-xl-3">
+						<div class="row  wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.33s">
+										<div class="s-ways__col col-xl-3 rellax" data-rellax-desktop-speed="0" data-rellax-percentage=".8">
 											<div class="s-ways__item bg-wrap">
 												<div class="s-ways__inner"><img class="object-fit-js img-bg" src="img/@2x/ways-img-1.jpg" alt=""/>
 													<div class="s-ways__icon-wrap"><img class="res-i" src="img/svg/ways-1.svg" alt=""/>
@@ -162,7 +179,7 @@
 											</div>
 										</div>
 										<!-- /+e.col.col-xl-3-->
-										<div class="s-ways__col col-xl-3">
+										<div class="s-ways__col col-xl-3 rellax" data-rellax-desktop-speed="1" data-rellax-percentage=".8">
 											<div class="s-ways__item bg-wrap">
 												<div class="s-ways__inner"><img class="object-fit-js img-bg" src="img/@2x/ways-img-2.jpg" alt=""/>
 													<div class="s-ways__icon-wrap"><img class="res-i" src="img/svg/ways-2.svg" alt=""/>
@@ -179,7 +196,7 @@
 											</div>
 										</div>
 										<!-- /+e.col.col-xl-3-->
-										<div class="s-ways__col col-xl-3">
+										<div class="s-ways__col col-xl-3 rellax" data-rellax-desktop-speed="2" data-rellax-percentage=".8">
 											<div class="s-ways__item bg-wrap">
 												<div class="s-ways__inner"><img class="object-fit-js img-bg" src="img/@2x/ways-img-3.jpg" alt=""/>
 													<div class="s-ways__icon-wrap"><img class="res-i" src="img/svg/ways-3.svg" alt=""/>
@@ -196,7 +213,7 @@
 											</div>
 										</div>
 										<!-- /+e.col.col-xl-3-->
-										<div class="s-ways__col col-xl-3">
+										<div class="s-ways__col col-xl-3 rellax" data-rellax-desktop-speed="3" data-rellax-percentage=".8">
 											<div class="s-ways__item bg-wrap">
 												<div class="s-ways__inner"><img class="object-fit-js img-bg" src="img/@2x/ways-img-4.jpg" alt=""/>
 													<div class="s-ways__icon-wrap"><img class="res-i" src="img/svg/ways-4.svg" alt=""/>
@@ -222,7 +239,7 @@
 			<section class="s-cases section" id="s-cases">
 				<div class="section__inner">
 					<div class="container">
-						<div class="section-title">
+						<div class="section-title wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.3s">
 							<div class="row">
 								<div class="col">
 									<h2>реализованные проекты</h2>
@@ -232,7 +249,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="s-cases__slider s-cases__slider--js swiper-container">
+						<div class="s-cases__slider s-cases__slider--js swiper-container wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.36s">
 							<div class="swiper-wrapper">
 								<div class="s-cases__slide swiper-slide">
 									<div class="s-cases__item bg-wrap">
@@ -472,7 +489,7 @@
 			<section class="s-advantages section" id="s-advantages">
 				<div class="section__inner"> 
 					<div class="container">
-						<div class="section-title">
+						<div class="section-title wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.3s">
 							<div class="row">
 								<div class="col">
 									<h2>достижения</h2>
@@ -482,7 +499,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="s-advantages__slider s-advantages__slider--js swiper-container">
+						<div class="s-advantages__slider s-advantages__slider--js swiper-container wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.36s">
 							<div class="swiper-wrapper">
 									<div class="s-advantages__slide swiper-slide">
 										<div class="s-advantages__item animate-item">
@@ -686,10 +703,10 @@
 			<section class="s-blog section" id="s-blog">
 				<div class="section__inner"> 
 					<div class="container">
-						<div class="section-title">
+						<div class="section-title wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.3s">
 							<h2>последнее из блога</h2>
 						</div>
-						<div class="row">
+						<div class="row  wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.36s">
 										<div class="s-blog__col col">
 											<div class="s-blog__item bg-wrap animate-item">
 												<div class="animate-item__inner"></div><img class="object-fit-js lazy img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/>
@@ -807,9 +824,9 @@
 			<div class="s-form section block-with-lazy" id="s-form">
 				<div class="section__inner"> 
 					<div class="container">
-						<div class="s-form__title">получите консультацию эксперта по&nbsp;1с
+						<div class="s-form__title wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.3s">получите консультацию эксперта по&nbsp;1с
 						</div>
-						<div class="row">
+						<div class="row  wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.36s">
 							<div class="col-md-auto order-md-last">
 								<div class="s-form-sidebar">
 									<div class="s-form-sidebar__img-wrap"><img src="img/@2x/valentin.png" alt=""/>
@@ -864,7 +881,7 @@
 							</div>
 						</div>
 					</div> 
-					<footer class="footer block-with-lazy">
+					<footer class="footer block-with-lazy wow fadeIn" data-wow-duration="0.6s" data-wow-delay="0.36s">
 						<div class="container">
 							<div class="row">
 								<div class="col">
@@ -903,21 +920,35 @@
 					<input class="utm_medium" type="hidden" name="utm_medium"/>
 					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
 					<div class="text-center">
-						<div class="form-wrap__title h3 ttu">Обратный звонок
+						<div class="form-wrap__title"> заказать звонок специалиста для&nbsp;консультации
 						</div>
-						<p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
 					</div>
 					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Ваше Имя" name="text" required="required"/> 
 					</div>
 					<!-- +e.input-wrap-->
 					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
 					</div>
-					<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Рассчитать"/>
-					<div class="form-wrap__polite">Нажимая кнопку &laquo;Отправить&raquo; вы&nbsp;соглашаетесь на&nbsp;обработку ваших персональных данных.
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><textarea class="form-wrap__input form-control" placeholder="Расскажите о вашем проекте" name="textarea"></textarea>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="text-center"><input class="form-wrap__btn" type="submit" value="Отправить"/>
+						<div class="form-wrap__polite">Нажимая кнопку &laquo;Отправить&raquo; вы&nbsp;соглашаетесь на&nbsp;обработку ваших персональных данных.
+						</div>
 					</div>
 				</form>
 			</div>
 			<!-- #modal-call-->
+			<div class="form-wrap modal-win" id="modal-thanks">
+				<div class="text-center">
+					<div class="form-wrap__title"> спасибо за&nbsp;обращение!
+					</div>
+					<p>Наш специалист свяжется с&nbsp;Вами в&nbsp;ближайшее время.</p>
+					<button class="form-wrap__btn modal-close-js" type="button">Закрыть
+					</button>
+				</div>
+			</div>
+			<!-- #modal-thanks-->
 		</div>
 		<!-- modal-->
 		<script src="js/lazy.js"></script>
@@ -936,6 +967,8 @@
 		<script src="libs/svg4everybody/svg4everybody.min.js"></script>
 		<!-- /for svg libs-->
 		<script src="libs/inputmask/jquery.inputmask.min.js"></script>
+		<script src="libs/rellax/rellax.min.js"></script>
+		<script src="libs/wowjs/wow.min.js"></script>
 		<script src="js/common.js"></script>
 	</body>
 </html>

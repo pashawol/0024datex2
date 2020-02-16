@@ -3,12 +3,12 @@ mixin s-ways()
 	+b.SECTION.s-ways.section#s-ways&attributes(attributes)
 		.section__inner
 			.container
-				+b.section-title 
+				+b.section-title(class="rellax  wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1  }s`  data-rellax-desktop-speed="1"  data-rellax-percentage="0.6" )
 					h2 направления деятельности
 					
-				.row
+				.row(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.1  }s`)
 					mixin item(i,t1,t)
-						+e.col.col-xl-3
+						+e.col.col-xl-3(class="rellax" data-rellax-desktop-speed=`${i - 1}`  data-rellax-percentage=".8" )
 							+e.item.bg-wrap
 								+e.inner
 								

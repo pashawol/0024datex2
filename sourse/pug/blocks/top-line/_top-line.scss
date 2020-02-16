@@ -6,10 +6,15 @@
 
   padding-top: rem(48 / 2);
   position: fixed;
-  width: 100%;
+  width: 100vw;
   left: 0;
   top: 0;
-  z-index: 200;
+  z-index: 1000;
+  transition: all .3s ease;
+
+  &.out {
+    transform: translateY(-100%);
+  }
 
   &__logo {
     display: flex;
