@@ -111,12 +111,12 @@
 	}
 
 	&__label-circle {
-		width: 8px;
-		height: 8px;
+		width: rem(8px);
+		height: rem(8px);
 		border-radius: 50%;
 		position: absolute;
 		left: 0;
-		top: rem(6);
+		top: rem(7);
 	}
 
 	&__title {

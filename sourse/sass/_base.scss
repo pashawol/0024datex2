@@ -659,7 +659,7 @@ h2 {
 		height: 2px;
 		position: absolute;
 		transition: all .4s ease;
-		background: #a6a6a7;
+		background: rgba($color: #a6a6a7, $alpha: .2);
 		z-index: 2;
 	}
 
@@ -709,7 +709,7 @@ h2 {
 			height: 0;
 			position: absolute;
 			transition: all .4s ease;
-			background: #a6a6a7;
+			background: rgba($color: #a6a6a7, $alpha: .2);
 			z-index: 2;
 		}
 
