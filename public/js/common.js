@@ -40,7 +40,18 @@ var JSCCommon = {
 		document.body.append(div);
 		var padd = div.offsetWidth - div.clientWidth; // console.log(1);
 
-		$(elem).css("marginRight", padd);
+		$(elem).css("paddingRight", padd);
+		div.remove();
+	},
+	marRight: function marRight(elem) {
+		var div = document.createElement('div');
+		div.style.overflowY = 'scroll';
+		div.style.width = '50px';
+		div.style.height = '50px';
+		document.body.append(div);
+		var mar = div.offsetWidth - div.clientWidth; // console.log(1);
+
+		$(elem).css("marginRight", mar);
 		div.remove();
 	},
 	// /magnificPopupCall
@@ -58,7 +69,7 @@ var JSCCommon = {
 				_this.body.classList.toggle("fixed");
 
 				if ($("body").hasClass("fixed")) {
-					JSCCommon.paddRight('body ');
+					JSCCommon.marRight('body ');
 				} else {
 					$("body ").css("marginRight", 0);
 				} // paddRight('.menu-mobile__inner');

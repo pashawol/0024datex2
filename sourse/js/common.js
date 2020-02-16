@@ -33,9 +33,22 @@ const JSCCommon = {
 		document.body.append(div);
 		var padd = div.offsetWidth - div.clientWidth; // console.log(1);
 
-		$(elem).css("marginRight", padd);
+		$(elem).css("paddingRight", padd);
 		div.remove();
 	},
+
+	marRight(elem) {
+		var div = document.createElement('div');
+		div.style.overflowY = 'scroll';
+		div.style.width = '50px';
+		div.style.height = '50px';
+		document.body.append(div);
+		var mar = div.offsetWidth - div.clientWidth; // console.log(1);
+
+		$(elem).css("marginRight", mar);
+		div.remove();
+	},
+
 	// /magnificPopupCall
 	toggleMenu() {
 		let _this = this;
@@ -53,7 +66,7 @@ const JSCCommon = {
 
 				if ($("body").hasClass("fixed")) {
 
-					JSCCommon.paddRight('body ');
+					JSCCommon.marRight('body ');
 				} else {
 					$("body ").css("marginRight", 0);
 
