@@ -1,73 +1,6 @@
 // start .s-cases
 .s-cases {
-	&__item {
-		border: 2px solid rgba($color: #a6a6a7, $alpha: .2);
-		position: relative;
 
-		&:after,
-		&:before {
-			content: "";
-			width: 0;
-			height: 2px;
-			position: absolute;
-			transition: all .4s ease;
-			background: #877d9b;
-			z-index: 2;
-		}
-
-		&:before {
-			right: -2px;
-			top: -2px;
-		}
-
-		&:after {
-			left: -2px;
-			bottom: -2px;
-		}
-
-		&:hover {
-
-			&::before,
-			&::after {
-				animation: d .8s forwards;
-			}
-
-			.s-cases__inner {
-
-				&::before,
-				&::after {
-					animation: e .8s forwards;
-				}
-
-			}
-		}
-	}
-
-	&__inner {
-		margin-left: auto;
-		margin-right: auto;
-
-		&:after,
-		&:before {
-			content: "";
-			width: 2px;
-			height: 0;
-			position: absolute;
-			transition: all .4s ease;
-			background: #877d9b;
-			z-index: 2;
-		}
-
-		&:before {
-			left: -2px;
-			bottom: -2px;
-		}
-
-		&:after {
-			right: -2px;
-			top: -2px;
-		}
-	}
 
 	&__slider {
 		max-width: 100%;
@@ -94,9 +27,7 @@
 
 		padding: rem(30) rem(25) rem(35);
 
-		.object-fit-js {
-			opacity: 0.1;
-		}
+
 	}
 
 	&__title {

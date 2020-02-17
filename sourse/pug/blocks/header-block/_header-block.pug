@@ -1,21 +1,24 @@
 mixin header-block()
 	// start header-block
 	+b.header-block.section#header-block.bg-wrap.when-menu-open
-		div(class="picture-bg wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1  }s`)
-			+pic('header-bg.png','bg')
+		div(class="picture-bg wow  fadeIn	" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 3  }s`)
+			picture
+				source(srcset='img/@2x/header-bg.png', type='image/png', media='(min-width:576px)')
+				source(srcset='img/@2x/header-bg-mob.png', type='image/png')
+				img.object-fit-js(src='img/@2x/header-bg.png', alt='')
 		.section__inner
 			+e.container: .container
-				.row.justify-content-center(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 2  }s`)
+				.row.justify-content-center(class=" wow  fadeIn	" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1  }s`) 
 					+e.text-block.col-md-6.col-auto
-						h1 
-							span(class="rellax" data-rellax-desktop-speed="4"  data-rellax-percentage="0.55" ) DATEX SOFT 
+						h1
+							span(class="rellax  " data-rellax-desktop-speed="4"  data-rellax-percentage="0.55" ) DATEX SOFT 
 							span(class="rellax" data-rellax-desktop-speed="3"   data-rellax-percentage="0.45") официальный
 							span(class="rellax" data-rellax-desktop-speed="2" data-rellax-percentage="0.35") партнер&nbsp;1с 
 						+e.text.d-none.d-md-block(class="rellax" data-rellax-desktop-speed="1" data-rellax-percentage=".002") Команда экспертов в&nbsp;сфере автоматизации бизнеса.
-					.col-md-6.col-auto(class="rellax" data-rellax-desktop-speed="4" data-rellax-percentage="0.4")
-						+e.IMG.logo-img(src="img/@2x/d.png" alt="")
+					.col-md-6.col-auto
+						+e.IMG.logo-img(src="img/@2x/d.png" alt="" class="rellax" data-rellax-desktop-speed="4" data-rellax-percentage="0.4")
 				+e.text.d-md-none Команда экспертов в&nbsp;сфере автоматизации бизнеса.
-			+e.clients(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 2.5  }s`)
+			+e.clients(class="wow slideInUp" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 4  }s`)
 				.container
 					+e.clients-title(class="rellax" data-rellax-desktop-speed="1"  data-rellax-percentage="0.25") Наши клиенты:
 					+e.slider--js.swiper-container

@@ -24,9 +24,18 @@
       max-width: rem(79);
       height: auto;
     }
+
+    a {
+      color: #ffffff !important;
+      text-decoration: none !important;
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__logo-text {
+    display: block;
+
     @include media-breakpoint-up(md) {
 
       margin-left: rem(45);
@@ -38,6 +47,7 @@
     @extend .mono;
     @extend .h3;
     position: relative;
+    margin-bottom: 0;
 
     &::before {
       content: '';

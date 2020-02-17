@@ -1,13 +1,13 @@
 mixin top-line()
 	// start .top-line
-	+b.top-line.block-with-lazy(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.5  }s`)
+	+b.top-line.block-with-lazy(class="wow slideInDown" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.5  }s`)
 		.container
 			.row
 				.col
 					+e.logo
 						a(href="/")
 							img(src="img/@2x/logo.png", alt="")
-						+e.logo-text datex soft
+							+e.DIV.logo-text datex soft
 				.col-auto.d-none.d-lg-block
 					+e.link(href="#")
 						+icon("flag")
@@ -22,3 +22,5 @@ mixin top-line()
 					+b.toggle-menu-mobile--js
 						span
 	// end .top-line
+
+	//- +b.aside-mnu

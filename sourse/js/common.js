@@ -105,7 +105,7 @@ const JSCCommon = {
 	},
 	// /mobileMenu
 
-	// /табы  
+
 	inputMask() {
 		// mask for input
 		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
@@ -114,7 +114,9 @@ const JSCCommon = {
 
 };
 
-function eventHandler() {
+
+
+jQuery(document).ready(function () {
 	JSCCommon.paddRight('.top-line');
 	// полифил для object-fit
 	objectFitImages();
@@ -234,17 +236,69 @@ function eventHandler() {
 	}
 
 	// анимация  при скролле 
+
 	var rellax = new Rellax('.rellax', {
 		// breakpoints: [576, 768, 1201],
 		// center: true
+		callback: function (positions) {
+
+		}
 	});
 	var wow = new WOW({
 		mobile: false
 	});
 	wow.init();
-};
-if (document.readyState !== 'loading') {
-	eventHandler();
-} else {
-	document.addEventListener('DOMContentLoaded', eventHandler);
-}
+
+	// боковые укатели слайдов
+
+
+
+	// Cache selectors
+	var lastId,
+		topMenu = $(" .aside-mnu"),
+		topMenuHeight = 20,
+		// topMenuHeight = topMenu.outerHeight()+15,
+		// All list items
+		menuItems = topMenu.find("a"),
+		// Anchors corresponding to menu items
+		scrollItems = menuItems.map(function () {
+			var item = $($(this).attr("href"));
+			if (item.length) { return item; }
+		});
+
+	// Bind click handler to menu items
+	// so we can get a fancy scroll animation
+	menuItems.click(function (e) {
+		var href = $(this).attr("href"),
+			offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+		$('html, body').stop().animate({
+			scrollTop: offsetTop
+		}, 1100);
+		e.preventDefault();
+	});
+
+	// Bind to scroll
+	$(window).scroll(function () {
+		// Get container scroll position
+		var fromTop = $(this).scrollTop() + topMenuHeight;
+
+		// Get id of current scroll item
+		var cur = scrollItems.map(function () {
+			if ($(this).offset().top < fromTop)
+				return this;
+		});
+		// Get the id of the current element
+		cur = cur[cur.length - 1];
+		var id = cur && cur.length ? cur[0].id : "";
+
+		if (lastId !== id) {
+			lastId = id;
+			// Set/remove active class
+			menuItems
+				.removeClass("active").parent()
+				.end().filter("[href='#" + id + "']").addClass("active");
+		}
+	});
+
+
+});

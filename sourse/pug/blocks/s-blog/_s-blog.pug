@@ -10,18 +10,18 @@ mixin s-blog()
 					mixin item(l, color, t,i)
 						+e.col.col
 							//- (class="rellax" data-rellax-desktop-speed=`${1 + i}`  data-rellax-percentage=`${.3 + i * .1} ` )
-							+e.item.bg-wrap.animate-item
+							+e.item.bg-wrap.animate-item(href="#")
 								.animate-item__inner
 								img.object-fit-js.lazy.img-bg(src="#" data-src="img/@2x/blog-1.jpg", alt="")
 								+e.label
 									+e.label-circle(style=`background-color:${color};`)
 									= l
-								+e.footer
-									+e.title
+								+e.DIV.footer
+									+e.DIV.title
 										if block
 											block
 										else
-											a(href="#") Онлайн-касса для 1С:Фреш
+											| Онлайн-касса для 1С:Фреш
 									+e.text 9 декабря, 2019 
 										+e.SPAN.date 
 											+icon("comment")
@@ -29,10 +29,10 @@ mixin s-blog()
 					+item("Статьи","#81d742",'1')
 					+item("Статьи","#81d742",'2')
 					+item("Автоматизация бизнеса","#edb63d",'3')
-						a(href="#") автоматизация нового бизнеса
+						| автоматизация нового бизнеса
 					+item("Статьи","#81d742",'4')
 					+item("Автоматизация бизнеса","#edb63d",'5')
-						a(href="#") автоматизация нового бизнеса
+						| автоматизация нового бизнеса
 					+item("Автоматизация бизнеса","#edb63d",'6')
-						a(href="#") автоматизация нового бизнеса
+						| автоматизация нового бизнеса
 	// end s-blog

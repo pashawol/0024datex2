@@ -13,20 +13,20 @@ mixin s-advantages()
 					.swiper-wrapper
 						mixin item(i,t)
 							+e.slide.swiper-slide
-								+e.item.animate-item
+								+e.item.animate-item(href="img/@2x/blog-3.jpg" data-fancybox="sertGal")
 									.animate-item__inner
-									+e.head
+									+e.DIV.head
 										.row
 										
-											+e.title.col Сертификат
-											+e.img-wrap.col-auto
+											+e.DIV.title.col Сертификат
+											+e.DIV.img-wrap.col-auto
 												img.swiper-lazy(src="#" data-src=`img/@2x/sert-logo-${i}.png`, alt="")
-									+e.body
+									+e.DIV.body
 										if block
 											block
 										else
 											p Сертификат удовстоверяет, что ООО &laquo;Датекс Софт&raquo; присвоен статус #[strong Центр Реальной Автоматизации].
-										+e.link(href="img/@2x/blog-3.jpg" data-fancybox="sertGal")
+										+e.DIV.link()
 						- for (var x = 0; x < 6; x++)
 							+item("1",'')
 							+item("2",'')

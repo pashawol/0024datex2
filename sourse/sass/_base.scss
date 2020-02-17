@@ -578,8 +578,8 @@ h2 {
 	@include bgs;
 
 	@include media-breakpoint-up(md) {
-		padding-top: rem(150px);
-		padding-bottom: rem(150px);
+		padding-top: rem(120px);
+		padding-bottom: rem(120px);
 
 	}
 
@@ -651,6 +651,25 @@ h2 {
 .animate-item {
 	border: 2px solid rgba($color: #a6a6a7, $alpha: .2);
 	position: relative;
+
+	.object-fit-js {
+		opacity: 0.1;
+		@include mt;
+	}
+
+	&:hover {
+		.object-fit-js {
+
+			opacity: 0;
+		}
+
+		.s-ways__btn,
+		.s-advantages__link {
+			background-color: $primary;
+			box-shadow: 0 5px 15px rgba(219, 30, 50, .5);
+		}
+
+	}
 
 	&:after,
 	&:before {
@@ -784,5 +803,50 @@ h2 {
 .rellax {
 	@include media-breakpoint-down(lg) {
 		transform: translate3d(0px, 0, 0px) !important;
+	}
+}
+
+
+.aside-mnu {
+	@include a-cent(y);
+	position: fixed;
+	right: 0;
+	list-style: none;
+	margin-top: rem(45);
+	z-index: 900;
+
+	width: 30px;
+	text-align: right;
+
+	&__item {
+		a {
+
+			width: 20px;
+			height: 2px;
+			background-color: $dark;
+			margin-bottom: rem(45);
+			cursor: pointer;
+			display: inline-block;
+			@include mt;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				height: 500%;
+				width: 100%;
+				@include a-cent;
+			}
+
+			&:hover {
+				background-color: $primary;
+
+			}
+
+			&.active {
+				background-color: $primary;
+				width: 30px;
+			}
+		}
 	}
 }

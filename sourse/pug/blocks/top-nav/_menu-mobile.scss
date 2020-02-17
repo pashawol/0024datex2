@@ -248,6 +248,10 @@ $h: rem(2);
 			text-decoration: none;
 			color: #ffffff !important;
 
+			&:hover {
+				opacity: 0.5;
+			}
+
 			// display: block;
 
 		}

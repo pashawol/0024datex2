@@ -3,23 +3,24 @@ mixin s-ways()
 	+b.SECTION.s-ways.section#s-ways&attributes(attributes)
 		.section__inner
 			.container
-				+b.section-title(class="rellax  wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1  }s`  data-rellax-desktop-speed="1"  data-rellax-percentage="0.6" )
-					h2 направления деятельности
+				+b.section-title(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1  }s`  )
+					h2(class="rellax   "  data-rellax-desktop-speed="1"  data-rellax-percentage="0.6" ) направления деятельности
 					
 				.row(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.1  }s`)
 					mixin item(i,t1,t)
 						+e.col.col-xl-3(class="rellax" data-rellax-desktop-speed=`${i - 1}`  data-rellax-percentage=".8" )
-							+e.item.bg-wrap
-								+e.inner
+							+e.item.bg-wrap.animate-item(href="#")
+								.animate-item__inner
+								+e.DIV.inner
 								
 									img.object-fit-js.img-bg(src=`img/@2x/ways-img-${i}.jpg`, alt="")
-									+e.icon-wrap
+									+e.DIV.icon-wrap
 										img.res-i(src=`img/svg/ways-${i}.svg`, alt="")
-									+e.category= t1
-									//- +e.title
+									+e.DIV.category= t1
+									//- +e.DIV.title
 									block
 									p Давно выяснено, что при оценке дизайна и&nbsp;композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют.
-									+e.btn(href="#") Перейти
+									+e.DIV.btn Перейти
 										+icon("arrow-right")
 						// /+e.col.col-xl-3
 					+item('1','Интернет-магазин')
@@ -31,3 +32,5 @@ mixin s-ways()
 					+item('4','Услуга')
 						+e.title реальная автоматизация
 	// end s-ways
+
+
