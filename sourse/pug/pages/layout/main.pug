@@ -45,16 +45,16 @@ html(lang="ru")
 		#stars
 		#stars2
 		#stars3
-		ul.aside-mnu
-			li.aside-mnu__item: a.active(href="#header-block")
-			li.aside-mnu__item: a(href="#s-ways")
-			li.aside-mnu__item: a(href="#s-cases")
-			li.aside-mnu__item: a(href="#s-advantages")
-			li.aside-mnu__item: a(href="#s-blog")
-			li.aside-mnu__item: a(href="#s-form")
+		//- ul.aside-mnu
+		//- 	li.aside-mnu__item: a.active(href="#header-block")
+		//- 	li.aside-mnu__item: a(href="#s-ways")
+		//- 	li.aside-mnu__item: a(href="#s-cases")
+		//- 	li.aside-mnu__item: a(href="#s-advantages")
+		//- 	li.aside-mnu__item: a(href="#s-blog")
+		//- 	li.aside-mnu__item: a(href="#s-form")
 		+mob-mnu() 
 		+top-line()  
-		.main-wrapper
+		.main-wrapper#fullpage
 			block pagecontent
 				h3 content
 		+modal()

@@ -507,11 +507,6 @@ input::-webkit-inner-spin-button {
 
 
 
-@include media-breakpoint-up(lg) {
-	.wow {
-		visibility: hidden;
-	}
-}
 
 .container {
 	max-width: 100%;
@@ -592,6 +587,25 @@ h2 {
 .section {
 	@include bgs;
 
+
+	@include media-breakpoint-down(xs) {
+
+		// min-height: calc(100vh - 70px);
+	}
+
+
+	@include media-breakpoint-up(md) {
+
+		// min-height: 100vh;
+		// // min-height: 1000px;
+		// width: 100%;
+		// display: table;
+	}
+
+}
+
+.section__inner {
+
 	@include media-breakpoint-up(xxl) {
 		padding-top: rem(120px);
 		padding-bottom: rem(120px);
@@ -602,28 +616,10 @@ h2 {
 	padding-bottom: rem(50px);
 	max-width: 100vw;
 
-	@include media-breakpoint-down(xs) {
-
-		// min-height: calc(100vh - 70px);
-	}
-
-
 	@include media-breakpoint-up(md) {
+		// vertical-align: middle;
 
-		min-height: 100vh;
-		// min-height: 1000px;
-		width: 100%;
-		display: table;
-	}
-
-}
-
-.section__inner {
-
-	@include media-breakpoint-up(md) {
-		vertical-align: middle;
-
-		display: table-cell;
+		// display: table-cell;
 	}
 }
 
@@ -631,7 +627,7 @@ h2 {
 .section__td {
 	@include media-breakpoint-up(sm) {}
 
-	width: 100%;
+	// width: 100%;
 }
 
 // .pagination-wrapper li
@@ -821,6 +817,81 @@ h2 {
 	}
 }
 
+#fp-nav.fp-right {
+	@include media-breakpoint-down(sm) {
+		display: none !important;
+	}
+
+	right: 0;
+	margin-right: 0;
+
+	.fp-sr-only {
+		display: none !important;
+	}
+
+	li {
+		width: 20px;
+		height: 2px;
+		background-color: $dark;
+		margin-bottom: rem(45);
+		cursor: pointer;
+		margin-right: 0;
+		@include mt;
+		position: relative;
+
+		span {
+			@include mt;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			height: 500%;
+			width: 100%;
+			@include a-cent;
+		}
+
+	}
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+	width: 20px;
+	height: 2px;
+	margin: 0;
+	border-radius: 0;
+	right: 0;
+	top: 0;
+	right: 0;
+	left: auto;
+}
+
+#fp-nav ul li a.active span,
+#fp-nav ul li:hover a.active span,
+.fp-slidesNav ul li a.active span,
+.fp-slidesNav ul li:hover a.active span {
+	width: 30px;
+	height: 2px;
+	margin: 0;
+	border-radius: 0;
+	right: 0;
+
+}
+
+#fp-nav ul li a.active span,
+#fp-nav ul li:hover a.active span {
+	background-color: $primary;
+}
+
+#fp-nav ul li:hover a span,
+.fp-slidesNav ul li:hover a span,
+.fp-slidesNav ul li:hover a.active span,
+#fp-nav ul li:hover a.active span {
+	background-color: #ffffff;
+	height: 2px;
+	width: 20px;
+	margin: 0;
+}
 
 .aside-mnu {
 	@include media-breakpoint-down(sm) {
@@ -836,6 +907,7 @@ h2 {
 
 	width: 30px;
 	text-align: right;
+
 
 	&__item {
 		a {

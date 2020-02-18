@@ -22,20 +22,13 @@
 		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="libs/animate.css/animate.min.css"/>
+		<link rel="stylesheet" href="libs/fullpage.js/fullpage.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 		<div id="stars"></div>
 		<div id="stars2"></div>
 		<div id="stars3"></div>
-		<ul class="aside-mnu">
-			<li class="aside-mnu__item"><a class="active" href="#header-block"></a></li>
-			<li class="aside-mnu__item"><a href="#s-ways"></a></li>
-			<li class="aside-mnu__item"><a href="#s-cases"></a></li>
-			<li class="aside-mnu__item"><a href="#s-advantages"></a></li>
-			<li class="aside-mnu__item"><a href="#s-blog"></a></li>
-			<li class="aside-mnu__item"><a href="#s-form"></a></li>
-		</ul>
 		<div class="menu-mobile menu-mobile--js">
 			<div class="menu-mobile__inner">
 				<div class="menu-mobile__table">
@@ -108,7 +101,7 @@
 			</div>
 		</div>
 		<!-- end .top-line-->
-		<div class="main-wrapper">
+		<div class="main-wrapper" id="fullpage">
 			<!-- start header-block-->
 			<div class="header-block section bg-wrap when-menu-open" id="header-block">
 				<div class="picture-bg wow  fadeIn	" data-wow-duration="0.8s" data-wow-delay="1.2000000000000002s">
@@ -131,25 +124,25 @@
 							</div>
 							<div class="header-block__text d-md-none">Команда экспертов в&nbsp;сфере автоматизации бизнеса.
 							</div>
-						</div>
-					</div>
-					<div class="header-block__clients wow slideInUp" data-wow-duration="0.8s" data-wow-delay="1.6s">
-						<div class="container">
-							<div class="header-block__clients-title rellax" data-rellax-desktop-speed="1" data-rellax-percentage="0.25">Наши клиенты:
-							</div>
-							<div class="header-block__slider header-block__slider--js swiper-container">
-								<div class="swiper-wrapper">
-									<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-1.png" alt="" data-rellax-desktop-speed="1.2 " data-rellax-percentage="0.2631578947368421"/>
+							<div class="header-block__clients wow slideInUp" data-wow-duration="0.8s" data-wow-delay="1.6s">
+								<div class="container">
+									<div class="header-block__clients-title rellax" data-rellax-desktop-speed="1" data-rellax-percentage="0.25">Наши клиенты:
 									</div>
-									<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-2.png" alt="" data-rellax-desktop-speed="1.7999999999999998 " data-rellax-percentage="0.2173913043478261"/>
-									</div>
-									<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-3.png" alt="" data-rellax-desktop-speed="2.4 " data-rellax-percentage="0.18518518518518517"/>
-									</div>
-									<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-4.png" alt="" data-rellax-desktop-speed="3 " data-rellax-percentage="0.16129032258064516"/>
-									</div>
-									<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-5.png" alt="" data-rellax-desktop-speed="3.5999999999999996 " data-rellax-percentage="0.14285714285714285"/>
-									</div>
-									<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-6.png" alt="" data-rellax-desktop-speed="4.2 " data-rellax-percentage="0.1282051282051282"/>
+									<div class="header-block__slider header-block__slider--js swiper-container">
+										<div class="swiper-wrapper">
+											<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-1.png" alt="" data-rellax-desktop-speed="1.2 " data-rellax-percentage="0.2631578947368421"/>
+											</div>
+											<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-2.png" alt="" data-rellax-desktop-speed="1.7999999999999998 " data-rellax-percentage="0.2173913043478261"/>
+											</div>
+											<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-3.png" alt="" data-rellax-desktop-speed="2.4 " data-rellax-percentage="0.18518518518518517"/>
+											</div>
+											<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-4.png" alt="" data-rellax-desktop-speed="3 " data-rellax-percentage="0.16129032258064516"/>
+											</div>
+											<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-5.png" alt="" data-rellax-desktop-speed="3.5999999999999996 " data-rellax-percentage="0.14285714285714285"/>
+											</div>
+											<div class="header-block__slide swiper-slide"><img class="rellax" src="img/@2x/logo-6.png" alt="" data-rellax-desktop-speed="4.2 " data-rellax-percentage="0.1282051282051282"/>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -169,7 +162,7 @@
 										<div class="s-ways__col col-xl-3 rellax" data-rellax-desktop-speed="0" data-rellax-percentage=".5"><a class="s-ways__item bg-wrap animate-item" href="#">
 											<div class="animate-item__inner"></div>
 											<div class="s-ways__inner"><img class="object-fit-js img-bg" src="img/@2x/ways-img-1.jpg" alt=""/>
-												<div class="s-ways__icon-wrap"><img class="res-i" src="img/svg/ways-1.svg" alt=""/>
+												<div class="s-ways__icon-wrap"><img class="res-i" src="#" data-src="img/svg/ways-1.svg" alt=""/>
 												</div>
 												<div class="s-ways__category">Интернет-магазин
 												</div>
@@ -187,7 +180,7 @@
 										<div class="s-ways__col col-xl-3 rellax" data-rellax-desktop-speed="1" data-rellax-percentage=".5"><a class="s-ways__item bg-wrap animate-item" href="#">
 											<div class="animate-item__inner"></div>
 											<div class="s-ways__inner"><img class="object-fit-js img-bg" src="img/@2x/ways-img-2.jpg" alt=""/>
-												<div class="s-ways__icon-wrap"><img class="res-i" src="img/svg/ways-2.svg" alt=""/>
+												<div class="s-ways__icon-wrap"><img class="res-i" src="#" data-src="img/svg/ways-2.svg" alt=""/>
 												</div>
 												<div class="s-ways__category">Интернет-магазин
 												</div>
@@ -205,7 +198,7 @@
 										<div class="s-ways__col col-xl-3 rellax" data-rellax-desktop-speed="2" data-rellax-percentage=".5"><a class="s-ways__item bg-wrap animate-item" href="#">
 											<div class="animate-item__inner"></div>
 											<div class="s-ways__inner"><img class="object-fit-js img-bg" src="img/@2x/ways-img-3.jpg" alt=""/>
-												<div class="s-ways__icon-wrap"><img class="res-i" src="img/svg/ways-3.svg" alt=""/>
+												<div class="s-ways__icon-wrap"><img class="res-i" src="#" data-src="img/svg/ways-3.svg" alt=""/>
 												</div>
 												<div class="s-ways__category">Сервис
 												</div>
@@ -223,7 +216,7 @@
 										<div class="s-ways__col col-xl-3 rellax" data-rellax-desktop-speed="3" data-rellax-percentage=".5"><a class="s-ways__item bg-wrap animate-item" href="#">
 											<div class="animate-item__inner"></div>
 											<div class="s-ways__inner"><img class="object-fit-js img-bg" src="img/@2x/ways-img-4.jpg" alt=""/>
-												<div class="s-ways__icon-wrap"><img class="res-i" src="img/svg/ways-4.svg" alt=""/>
+												<div class="s-ways__icon-wrap"><img class="res-i" src="#" data-src="img/svg/ways-4.svg" alt=""/>
 												</div>
 												<div class="s-ways__category">Услуга
 												</div>
@@ -720,7 +713,7 @@
 						</div>
 						<div class="row  wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.48s">
 										<div class="s-blog__col col"><a class="s-blog__item bg-wrap animate-item" href="#">
-											<div class="animate-item__inner"></div><img class="object-fit-js lazy img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/><span class="s-blog__label"><span class="s-blog__label-circle" style="background-color:#81d742;"></span>Статьи</span>
+											<div class="animate-item__inner"></div><img class="object-fit-js img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/><span class="s-blog__label"><span class="s-blog__label-circle" style="background-color:#81d742;"></span>Статьи</span>
 											<div class="s-blog__footer">
 												<div class="s-blog__title">Онлайн-касса для 1С:Фреш
 												</div>
@@ -732,7 +725,7 @@
 											</div></a>
 										</div>
 										<div class="s-blog__col col"><a class="s-blog__item bg-wrap animate-item" href="#">
-											<div class="animate-item__inner"></div><img class="object-fit-js lazy img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/><span class="s-blog__label"><span class="s-blog__label-circle" style="background-color:#81d742;"></span>Статьи</span>
+											<div class="animate-item__inner"></div><img class="object-fit-js img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/><span class="s-blog__label"><span class="s-blog__label-circle" style="background-color:#81d742;"></span>Статьи</span>
 											<div class="s-blog__footer">
 												<div class="s-blog__title">Онлайн-касса для 1С:Фреш
 												</div>
@@ -744,7 +737,7 @@
 											</div></a>
 										</div>
 										<div class="s-blog__col col"><a class="s-blog__item bg-wrap animate-item" href="#">
-											<div class="animate-item__inner"></div><img class="object-fit-js lazy img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/><span class="s-blog__label"><span class="s-blog__label-circle" style="background-color:#edb63d;"></span>Автоматизация бизнеса</span>
+											<div class="animate-item__inner"></div><img class="object-fit-js img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/><span class="s-blog__label"><span class="s-blog__label-circle" style="background-color:#edb63d;"></span>Автоматизация бизнеса</span>
 											<div class="s-blog__footer">
 												<div class="s-blog__title">автоматизация нового бизнеса
 												</div>
@@ -756,7 +749,7 @@
 											</div></a>
 										</div>
 										<div class="s-blog__col col"><a class="s-blog__item bg-wrap animate-item" href="#">
-											<div class="animate-item__inner"></div><img class="object-fit-js lazy img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/><span class="s-blog__label"><span class="s-blog__label-circle" style="background-color:#81d742;"></span>Статьи</span>
+											<div class="animate-item__inner"></div><img class="object-fit-js img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/><span class="s-blog__label"><span class="s-blog__label-circle" style="background-color:#81d742;"></span>Статьи</span>
 											<div class="s-blog__footer">
 												<div class="s-blog__title">Онлайн-касса для 1С:Фреш
 												</div>
@@ -768,7 +761,7 @@
 											</div></a>
 										</div>
 										<div class="s-blog__col col"><a class="s-blog__item bg-wrap animate-item" href="#">
-											<div class="animate-item__inner"></div><img class="object-fit-js lazy img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/><span class="s-blog__label"><span class="s-blog__label-circle" style="background-color:#edb63d;"></span>Автоматизация бизнеса</span>
+											<div class="animate-item__inner"></div><img class="object-fit-js img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/><span class="s-blog__label"><span class="s-blog__label-circle" style="background-color:#edb63d;"></span>Автоматизация бизнеса</span>
 											<div class="s-blog__footer">
 												<div class="s-blog__title">автоматизация нового бизнеса
 												</div>
@@ -780,7 +773,7 @@
 											</div></a>
 										</div>
 										<div class="s-blog__col col"><a class="s-blog__item bg-wrap animate-item" href="#">
-											<div class="animate-item__inner"></div><img class="object-fit-js lazy img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/><span class="s-blog__label"><span class="s-blog__label-circle" style="background-color:#edb63d;"></span>Автоматизация бизнеса</span>
+											<div class="animate-item__inner"></div><img class="object-fit-js img-bg" src="#" data-src="img/@2x/blog-1.jpg" alt=""/><span class="s-blog__label"><span class="s-blog__label-circle" style="background-color:#edb63d;"></span>Автоматизация бизнеса</span>
 											<div class="s-blog__footer">
 												<div class="s-blog__title">автоматизация нового бизнеса
 												</div>
@@ -951,6 +944,9 @@
 		<script src="libs/inputmask/jquery.inputmask.min.js"></script>
 		<script src="libs/rellax/rellax.min.js"></script>
 		<script src="libs/wowjs/wow.min.js"></script>
+		<script src="js/easings.min.js"></script>
+		<script src="js/scrolloverflow.min.js"></script>
+		<script src="libs/fullpage.js/fullpage.min.js"></script>
 		<script src="js/common.js"></script>
 	</body>
 </html>
