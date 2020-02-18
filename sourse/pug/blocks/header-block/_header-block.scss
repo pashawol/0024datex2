@@ -135,11 +135,13 @@
 		left: 0;
 		width: 100%;
 
-		@include media-breakpoint-up(xxl) {}
+		@include media-breakpoint-up(xxl) {
 
-		padding-bottom: rem(105);
+			padding-bottom: rem(105);
+		}
 
-		// padding-bottom: rem(75);
+
+		padding-bottom: rem(55);
 	}
 
 	&__clients-title {
