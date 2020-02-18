@@ -8,7 +8,7 @@ mixin s-ways()
 					
 				.row(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.1  }s`)
 					mixin item(i,t1,t)
-						+e.col.col-xl-3(class="rellax" data-rellax-desktop-speed=`${i - 1}`  data-rellax-percentage=".5" )
+						+e.col.col-xl-3(class="rellax" data-rellax-desktop-speed=`${i - 1}`  data-rellax-percentage=`${0.4 + 0.028 * i }` )
 							+e.item.bg-wrap.animate-item(href="#")
 								.animate-item__inner
 								+e.DIV.inner

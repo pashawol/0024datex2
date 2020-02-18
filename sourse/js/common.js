@@ -242,7 +242,7 @@ jQuery(document).ready(function () {
 	});
 
 	$('#fullpage').fullpage({
-		scrollingSpeed: 1000,
+		// scrollingSpeed: 1000,
 		loopHorizontal: true,
 		responsiveWidth: 1200,
 		responsiveHeight: 800,
