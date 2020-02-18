@@ -237,6 +237,9 @@ jQuery(document).ready(function () {
 
 	// анимация  при скролле 
 
+	var wow = new WOW({
+		mobile: false
+	});
 
 	$('#fullpage').fullpage({
 		scrollingSpeed: 1000,
@@ -250,16 +253,13 @@ jQuery(document).ready(function () {
 		// verticalCentered: false,
 		fixedElements: '.top-line',
 		scrollBar: true,
-		continuousVertical: true,
-		autoScrolling: true,
-		scrollOverflow: true,
-		scrollOverflowReset: true,
-		scrollOverflowReset: true,
+		// continuousVertical: true,
+		// autoScrolling: true,
+		// scrollOverflow: true,
+		// scrollOverflowReset: true,
+		// scrollOverflowReset: true,
 		afterRender: function () {
 			var rellax = new Rellax('.rellax', {});
-			var wow = new WOW({
-				mobile: false
-			});
 			wow.init();
 
 		},

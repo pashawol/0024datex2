@@ -16,15 +16,15 @@ mixin header-block()
 							span(class="rellax" data-rellax-desktop-speed="2" data-rellax-percentage="0.35") партнер&nbsp;1с 
 						+e.text.d-none.d-md-block(class="rellax" data-rellax-desktop-speed="1" data-rellax-percentage=".002") Команда экспертов в&nbsp;сфере автоматизации бизнеса.
 					.col-md-6.col-auto
-						+e.IMG.logo-img(src="img/@2x/d.png" alt="" class="rellax" data-rellax-desktop-speed="4" data-rellax-percentage="0.4")
+						+e.IMG.logo-img(src="img/@2x/d.png" alt="" class="rellax" data-rellax-desktop-speed="2" data-rellax-percentage="0.2")
 				+e.text.d-md-none Команда экспертов в&nbsp;сфере автоматизации бизнеса.
-				+e.clients(class="wow slideInUp" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 4  }s`)
-					.container
-						+e.clients-title(class="rellax" data-rellax-desktop-speed="1"  data-rellax-percentage="0.25") Наши клиенты:
+				+e.clients
+					.container(class="wow slideInUp" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 4  }s`)
+						+e.clients-title(class="rellax" data-rellax-desktop-speed="1"  data-rellax-percentage="0.2") Наши клиенты:
 						+e.slider--js.swiper-container
 							.swiper-wrapper
 								- for (var x = 1; x < 7; x++)
 									+e.slide.swiper-slide
 										
-										img(src=`img/@2x/logo-${x}.png`, alt=""  class="rellax" data-rellax-desktop-speed=`${(1 + x) * .6} `  data-rellax-percentage=`${0.5 /(1.5 + x * .4)}`)
+										img(src=`img/@2x/logo-${x}.png`, alt=""  class="rellax" data-rellax-desktop-speed=`${(1 + x) * .4} `  data-rellax-percentage=`${0.5 /(1.5 + x * .4)}`)
 	// end header-block

@@ -110,8 +110,6 @@ var JSCCommon = {
 
 };
 jQuery(document).ready(function () {
-	var _$$fullpage;
-
 	JSCCommon.paddRight('.top-line'); // полифил для object-fit
 
 	objectFitImages(); // Picture element HTML5 shiv
@@ -214,7 +212,10 @@ jQuery(document).ready(function () {
 	} // анимация  при скролле 
 
 
-	$('#fullpage').fullpage((_$$fullpage = {
+	var wow = new WOW({
+		mobile: false
+	});
+	$('#fullpage').fullpage({
 		scrollingSpeed: 1000,
 		loopHorizontal: true,
 		responsiveWidth: 1200,
@@ -226,15 +227,14 @@ jQuery(document).ready(function () {
 		// verticalCentered: false,
 		fixedElements: '.top-line',
 		scrollBar: true,
-		continuousVertical: true,
-		autoScrolling: true,
-		scrollOverflow: true,
-		scrollOverflowReset: true
-	}, _defineProperty(_$$fullpage, "scrollOverflowReset", true), _defineProperty(_$$fullpage, "afterRender", function afterRender() {
-		var rellax = new Rellax('.rellax', {});
-		var wow = new WOW({
-			mobile: false
-		});
-		wow.init();
-	}), _$$fullpage));
+		// continuousVertical: true,
+		// autoScrolling: true,
+		// scrollOverflow: true,
+		// scrollOverflowReset: true,
+		// scrollOverflowReset: true,
+		afterRender: function afterRender() {
+			var rellax = new Rellax('.rellax', {});
+			wow.init();
+		}
+	});
 });
