@@ -159,7 +159,7 @@ jQuery(document).ready(function () {
 	var headSl = new Swiper('.header-block__slider--js', {
 		slidesPerView: 'auto',
 		watchOverflow: true,
-		spaceBetween: 37,
+		spaceBetween: 27,
 		freeMode: true,
 		freeModeMomentum: true,
 		// spaceBetween: 30, 

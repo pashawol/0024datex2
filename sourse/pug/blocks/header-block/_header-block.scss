@@ -21,6 +21,7 @@
 
 		&__inner {
 			// display: block;
+			vertical-align: middle;
 			display: table-cell;
 		}
 	}
@@ -152,6 +153,20 @@
 
 	picture {
 		opacity: 0.05;
+	}
+
+	&__slide {
+		@include media-breakpoint-up(sm) {
+			padding-right: 10px;
+		}
+
+		img {
+			@extend .res-i;
+		}
+
+		@include media-breakpoint-down(xs) {
+			max-width: rem(100);
+		}
 	}
 
 	// 

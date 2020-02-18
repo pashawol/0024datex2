@@ -1,5 +1,15 @@
 .s-form-sidebar {
-	width: rem(330);
+	@include media-breakpoint-up(md) {
+
+		width: rem(330);
+	}
+
+	.row {
+		@include roww(8);
+		align-items: center;
+	}
+
+	// width: rem(340);
 
 	@include media-breakpoint-up(md) {
 		margin-top: rem(-175);
@@ -25,11 +35,11 @@
 			margin-right: auto;
 			width: rem(270);
 			height: rem(270);
+			margin-bottom: rem(35);
 		}
 
 		width: 90px;
 		height: 90px;
-		margin-bottom: rem(35);
 		border-radius: 50%;
 
 		img {
@@ -64,6 +74,14 @@
 		color: #ffffff !important;
 		text-decoration: none !important;
 		font-weight: normal;
+	}
+
+	&__text {
+		@include media-breakpoint-up(md) {
+			// max-width: none;
+		}
+
+		// max-width: rem(240);
 	}
 
 	//

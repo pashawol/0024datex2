@@ -4,20 +4,23 @@ mixin s-form()
 		.section__inner 
 			.container
 				
-				+e.title(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1  }s`) получите консультацию эксперта по&nbsp;1с
+				+e.title(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1  }s`) получите консультацию эксперта&nbsp;по&nbsp;1с
 				.row(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.2  }s`)
 					.col-md-auto.order-md-last
 						+b.s-form-sidebar
-							+e.img-wrap
-								img(src="img/@2x/valentin.png", alt="")
-							+e.title  шуба валентин
-							+e.text  Сертифицированный специалист 1С
-							div
-								+e.tel(href="tel:8(800)500-57-48") 
-									+icon("phone-receiver")
-									| 8 (800) 500-57-48
-							div
-								+e.mail(href="mailto:info@datexsoft.ru ") info@datexsoft.ru  
+							.row
+								.col-md-12.col-auto
+									+e.img-wrap
+										img(src="img/@2x/valentin.png", alt="")
+								.col-md-12.col
+									+e.title  Шуба Валентин
+									+e.text  Сертифицированный специалист&nbsp;1С
+									div
+										+e.tel(href="tel:8(800)500-57-48") 
+											+icon("phone-receiver")
+											| 8 (800) 500-57-48
+									div
+										+e.mail(href="mailto:info@datexsoft.ru ") info@datexsoft.ru  
 					.col
 						+form-wrap
 							.row

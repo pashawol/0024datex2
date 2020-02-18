@@ -27,12 +27,26 @@ body {
 	min-width: 320px;
 	position: relative;
 
-	@include media-breakpoint-up(sm) {
+	&::after {
+		content: '';
+		z-index: -1;
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+
+		@include media-breakpoint-up(sm) {}
 
 		background-image: url(../img/@2x/main-bg.jpg);
+
+		// background-image: url(../img/@1x/main-bg.jpg);
+		@include bgs;
+		left: 0;
+		top: 0;
 	}
 
-	background-image: url(../img/@1x/main-bg.jpg);
+
+
+	// background-image: url(../img/@1x/main-bg.jpg);
 	@include bgs;
 	background-attachment: fixed;
 
@@ -67,6 +81,7 @@ body {
 	&.fancybox-active,
 	&.fixed {
 
+		.aside-mnu,
 		.when-menu-open,
 		.s-ways,
 		.s-cases,
@@ -577,7 +592,7 @@ h2 {
 .section {
 	@include bgs;
 
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(xxl) {
 		padding-top: rem(120px);
 		padding-bottom: rem(120px);
 
@@ -808,6 +823,10 @@ h2 {
 
 
 .aside-mnu {
+	@include media-breakpoint-down(sm) {
+		display: none;
+	}
+
 	@include a-cent(y);
 	position: fixed;
 	right: 0;
@@ -839,7 +858,7 @@ h2 {
 			}
 
 			&:hover {
-				background-color: $primary;
+				background-color: #fff;
 
 			}
 
