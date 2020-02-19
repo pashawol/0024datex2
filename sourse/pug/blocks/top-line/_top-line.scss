@@ -12,8 +12,11 @@
   z-index: 1000;
   transition: all .3s ease;
 
-  &.out {
-    transform: translateY(-100%);
+  @media (max-height: 800px) {
+
+    &.out {
+      transform: translateY(-100%);
+    }
   }
 
   &__logo {
