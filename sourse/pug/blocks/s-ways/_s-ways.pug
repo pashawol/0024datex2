@@ -4,11 +4,11 @@ mixin s-ways()
 		.section__inner
 			.container
 				+b.section-title(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1  }s`  )
-					h2(class="rellax   "  data-rellax-desktop-speed="1"  data-rellax-percentage="0.6" ) направления деятельности
+					h2(class="rellax   "  data-rellax-desktop-speed=".5"  data-rellax-percentage="0.6" ) направления деятельности
 					
 				.row(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.1  }s`)
 					mixin item(i,t1,t)
-						+e.col.col-xl-3(class="rellax" data-rellax-desktop-speed=`${(i - 1) * .5}`  data-rellax-percentage=`${(.9 + 0.01 * i) * .5 }` )
+						+e.col.col-xl-3(class="rellax" data-rellax-desktop-speed=`${(i) * .5}`  data-rellax-percentage=`${(.9 + 0.01 * i) * .5 }` )
 							+e.item.bg-wrap.animate-item(href="#")
 								.animate-item__inner
 								+e.DIV.inner
