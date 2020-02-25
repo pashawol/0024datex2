@@ -1,6 +1,17 @@
 // start .s-blog
 .s-blog {
+
 	// padding-top: 150px !important;
+	@include media-breakpoint-up(xxl) {
+		.fp-tableCell {
+
+			vertical-align: bottom;
+		}
+
+		.section__inner {
+			padding: 0;
+		}
+	}
 
 	&__col {
 		@include media-breakpoint-up(xl) {

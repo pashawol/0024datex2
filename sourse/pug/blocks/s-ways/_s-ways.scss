@@ -20,6 +20,9 @@
 		color: #ffffff !important;
 		// display: block;
 		text-decoration: none !important;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 
 		&:hover {
 			.object-fit-js {
@@ -149,7 +152,7 @@
 	}
 
 	&__btn {
-
+		margin-top: auto;
 		@extend .btn-l;
 
 		margin-top: auto;

@@ -8,7 +8,7 @@ mixin s-ways()
 					
 				.row(class=" wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.1  }s`)
 					mixin item(i,t1,t)
-						+e.col.col-xl-3(class="rellax" data-rellax-desktop-speed=`${i - 1}`  data-rellax-percentage=`${0.4 + 0.028 * i }` )
+						+e.col.col-xl-3(class="rellax" data-rellax-desktop-speed=`${(i - 1) * .5}`  data-rellax-percentage=`${(.9 + 0.01 * i) * .5 }` )
 							+e.item.bg-wrap.animate-item(href="#")
 								.animate-item__inner
 								+e.DIV.inner
@@ -24,7 +24,7 @@ mixin s-ways()
 										+icon("arrow-right")
 						// /+e.col.col-xl-3
 					+item('1','Интернет-магазин')
-						+e.title программы и&nbsp;услуги&nbsp;1с
+						+e.title программы и&nbsp;услуги&nbsp;1с asdsd
 					+item('2','Интернет-магазин')
 						+e.title торговое оборудование
 					+item('3','Сервис')
