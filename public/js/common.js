@@ -6,6 +6,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var $ = jQuery;
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
@@ -122,7 +123,8 @@ jQuery(document).ready(function () {
 	JSCCommon.inputMask();
 	var header = $('.top-line'),
 			scrollPrev = 0;
-	$(window).scroll(function () {
+
+	function positionWindow() {
 		var scrolled = $(window).scrollTop();
 
 		if (scrolled > 100 && scrolled > scrollPrev) {
@@ -132,6 +134,11 @@ jQuery(document).ready(function () {
 		}
 
 		scrollPrev = scrolled;
+	}
+
+	positionWindow();
+	$(window).scroll(function () {
+		positionWindow();
 	}); // листалка по стр
 
 	$(" .top-nav li a, .scroll-link").click(function () {
@@ -188,9 +195,9 @@ jQuery(document).ready(function () {
 			slidesPerView: 4
 		}, defaultSl));
 	} else {
-		var advSl = new Swiper('.s-advantages__slider--js', _objectSpread({
+		var advSl = new Swiper('.s-advantages__slider--js', _objectSpread(_objectSpread({
 			slidesPerView: 1
-		}, defaultSl, {
+		}, defaultSl), {}, {
 			breakpoints: {
 				// when window width is >= 320px
 				576: {

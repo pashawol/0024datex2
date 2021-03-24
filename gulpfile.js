@@ -15,6 +15,7 @@ global.$ = {
 	gp: require('gulp-load-plugins')(),
 	browserSync: require('browser-sync').create(),
 	compass: require('gulp-compass'),
+	responsive: require('@tigersway/gulp-responsive'),
 	path: {
 		tasks: require('./gulp/config/tasks.js'),
 	},

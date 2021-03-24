@@ -1,24 +1,40 @@
 mixin top-line()
 	// start .top-line
 	+b.top-line.block-with-lazy(class="wow slideInDown" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.5  }s`)
-		.container
+		.container-fluid
 			.row
-				.col
+				.col-xl-auto.col
 					+e.logo
 						a(href="/")
-							img(src="img/@2x/logo.png", alt="")
-							+e.DIV.logo-text datex soft
-				.col-auto.d-none.d-lg-block
-					+e.link(href="#")
+							svg(width='160' height='28' viewBox='0 0 160 28' fill='none' xmlns='http://www.w3.org/2000/svg')
+								path(d='M20.6787 0.028656C30.8745 0.028656 39.8988 3.18921 39.8988 13.9926C39.8988 24.7959 30.9062 27.9565 20.6787 27.9565H11.781V0.028656H20.6787ZM20.837 5.91878H19.1588V22.0951H20.837C26.2516 22.0951 32.1094 21.4917 32.1094 14.0213C32.1094 6.49343 26.2516 5.91878 20.837 5.91878Z' fill='white')
+								path(d='M52.1847 0.028656H60.2591L72.1015 27.9852H64.0588L62.0956 22.9283H50.1582L48.195 27.9852H40.3423L52.1847 0.028656ZM52.4697 17.0669H59.8474L56.1744 7.49906L52.4697 17.0669Z' fill='white')
+								path(d='M82.1071 5.91879H72.0696V0.028656H99.5224V5.91879H89.4532V27.9852H82.0755V5.91879H82.1071Z' fill='white')
+								path(d='M102.624 0.028656H126.625V5.91879H110.002V10.6884H125.675V16.5785H110.002V22.0951H126.625V27.9852H102.624V0.028656Z' fill='white')
+								path(d='M139.64 13.7341L128.399 0H137.107L143.978 8.41858L150.944 0H159.493L148.253 13.6479L160 27.9566H151.356L143.883 18.9059L136.41 27.9566H127.924L139.64 13.7341Z' fill='white')
+								path(d='M7.88439 20.8308H0V27.9851H7.88439V20.8308Z' fill='#DB1E32')
+								path(d='M7.88439 10.4298H0V17.5841H7.88439V10.4298Z' fill='white')
+								path(d='M7.88439 0.028656H0V7.18301H7.88439V0.028656Z' fill='white')
+				.col.d-none.d-xl-block
+					+mnu()
+				+e.col-place.col-auto.d-none.d-lg-block
+					+e.link--place(href="#")
 						+icon("flag")
-						| Санкт-Петербург
+						+e.btn-text Санкт-Петербург
 				.col-auto
 					+e.link--tel(href="tel:+7(846)3004840")
 						+icon("phone-receiver")
-						span.d-none.d-md-inline +7 (846) 300 48 40
-				.col-auto.d-none.d-md-block
-					+e.btn.link-modal(href="#modal-call") Заказать звонок
-				.col-auto
+						span.d-none.d-xxl-inline +7 (846) 300 48 40
+				.col-auto.d-none.d-md-block.order-last
+					+e.btn--cabinet.link-modal(href="#")
+						+icon("user")
+						+e.btn-text Личный кабинет
+				.col-auto.d-none.d-md-block.order-last
+					+e.btn--modal.link-modal(href="#modal-call")
+						+e.btn-avatar
+							img(src="img/@2x/avatar.png", alt="")
+						+e.btn-text Написать <br> директору
+				.col-auto.d-xl-none.order-last
 					+b.toggle-menu-mobile--js
 						span
 	// end .top-line

@@ -1,3 +1,5 @@
+
+var $ = jQuery;
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
@@ -133,8 +135,7 @@ jQuery(document).ready(function () {
 
 	var header = $('.top-line'),
 		scrollPrev = 0;
-
-	$(window).scroll(function () {
+	function positionWindow() {
 		var scrolled = $(window).scrollTop();
 
 		if (scrolled > 100 && scrolled > scrollPrev) {
@@ -143,6 +144,11 @@ jQuery(document).ready(function () {
 			header.removeClass('out').removeClass('wow').addClass('visible');
 		}
 		scrollPrev = scrolled;
+
+	}
+	positionWindow();
+	$(window).scroll(function () {
+		positionWindow();
 	});
 
 

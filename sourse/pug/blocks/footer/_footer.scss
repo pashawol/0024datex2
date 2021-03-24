@@ -21,10 +21,12 @@
   .row>* {
     margin-bottom: rem(10);
   }
+  @media (min-width: 992px){
 
+  }
   @include media-breakpoint-up(lg) {
-
     position: absolute;
+
     left: 0;
     width: 100%;
     bottom: rem(40);

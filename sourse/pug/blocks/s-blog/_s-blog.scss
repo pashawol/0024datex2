@@ -5,11 +5,11 @@
 	@include media-breakpoint-up(xxl) {
 		.fp-tableCell {
 
-			vertical-align: bottom;
+			// vertical-align: bottom;
 		}
 
 		.section__inner {
-			padding: 0;
+			// padding: 0;
 		}
 	}
 
@@ -67,7 +67,7 @@
 		@include media-breakpoint-up(sm) {
 
 			padding: rem(28) rem(30) rem(21);
-			min-height: rem(330);
+			min-height: rem(280);
 			height: 100%;
 		}
 
@@ -131,7 +131,8 @@
 	}
 
 	&__title {
-		@extend .h2;
+		// @extend .h2;
+		@include rfs(40);
 		@extend .mono;
 		margin-bottom: rem(20);
 		line-height: 1;

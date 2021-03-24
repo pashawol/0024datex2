@@ -25,10 +25,19 @@
 			// box-shadow: 0 10px 0px #fff;
 		}
 	}
+	.wpcf7-quiz{
+		@extend .form-control;
+		@extend .form-wrap__input;
+		border-top: none !important;
+		border-left: none !important;
+		border-right: none !important;
+		border-width: 2px !important;
+		background-color: transparent !important;
 
+	}
 	&__btn {
 		cursor: pointer;
-		@extend .btn;
+		@extend .btn; 
 		@extend .btn-primary;
 		width: rem(178);
 

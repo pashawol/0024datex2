@@ -588,8 +588,8 @@ h2 {
 	@include bgs;
 
 
-	@include media-breakpoint-down(xs) {
-
+	@include media-breakpoint-down(lg) {
+		height: auto !important;
 		// min-height: calc(100vh - 70px);
 	}
 
@@ -826,7 +826,7 @@ h2 {
 	margin-right: 0;
 
 	.fp-sr-only {
-		display: none !important;
+		// display: none !important;
 	}
 
 	li {
@@ -841,12 +841,18 @@ h2 {
 
 		span {
 			@include mt;
+			display: block;
 		}
 
-		&::before {
+		a {
+
+			position: relative;
+		}
+
+		a::before {
 			content: '';
 			position: absolute;
-			height: 500%;
+			height: 40px;
 			width: 100%;
 			@include a-cent;
 		}
@@ -982,7 +988,7 @@ body .toggle-btn {
 		&:hover {
 			background-color: #dadde2;
 			border-bottom: 1px solid #dadde2;
-			color: #ffffff !important;
+			// color: #ffffff !important;
 		}
 	}
 }

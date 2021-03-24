@@ -108,15 +108,48 @@ mixin soc()
 mixin mnu()
 	-
 		var nav= { 
-			"Наши работы":"#",
-			"Цены":"#",
-			"Калькулятор":"#",
-			"Акции":"#" ,
-			"Заказать":"#",
+			"Блог":"#",
+			"Контакты":"#",
 			}
 	ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
 		li.menu-item.menu-item-has-children
-			a(href="#" itemprop="url") О нас
+			a(href="#" itemprop="url") Программы 1С
+			ul.sub-menu
+				-
+					var subnav= { 
+						"Бухгалтерский учет":"#",
+						"Торговый и складской учет":"#",
+						"Розничная торговля":"#",
+						"Расчет зарплаты и кадры":"#" ,
+						"Общепит и гостиничный бизнес ":"#" ,
+						"Медицина ":"#" ,
+						" Автотранспорт и логистика":"#" ,
+						"Документооборот ":"#" ,
+						"Комплексная автоматизация ":"#" ,
+						"Серверные лицензии ":"#" ,
+						"Производственные предприятия и ERP ":"#" ,
+						"Отраслевые решения ":"#" ,
+						"CRM":"#" ,
+						" ИТС":"#" ,
+						" Дополнительные лицензии ":"#" ,
+						}
+				each sublinkPatch, sublinkName in subnav
+					li.menu-item.menu-item-has-children(itemprop="item" )
+						a(href="#" itemprop="url")= sublinkName
+						ul.sub-menu
+							-
+								var subnav2= { 
+									"Строительство загородных домов":"#",
+									"Отделка загородных домов":"#",
+									"Покраска деревянных домов":"#",
+									"Штукатурные фасады загородных домов":"#" ,
+									}
+							each sublinkPatch2 , sublinkName2 in subnav2
+								li.menu-item
+									a(href="#" )= sublinkName2
+
+		li.menu-item.menu-item-has-children
+			a(href="#" itemprop="url") Услуги
 			ul.sub-menu
 				-
 					var subnav= { 
@@ -125,29 +158,47 @@ mixin mnu()
 						"Покраска деревянных домов":"#",
 						"Штукатурные фасады загородных домов":"#" ,
 						}
-				each sublinkPatch, sublinkName in nav
-					li.menu-item(itemprop="item" ): a(href= sublinkPatch itemprop="url")= sublinkName
+				each sublinkPatch, sublinkName in subnav
+					li.menu-item(itemprop="item" ): a(href="#" itemprop="url")= sublinkName
+		li.menu-item.menu-item-has-children
+			a(href="#" itemprop="url") Торговое оборудование
+			ul.sub-menu
+				-
+					var subnav= { 
+						"Строительство загородных домов":"#",
+						"Отделка загородных домов":"#",
+						"Покраска деревянных домов":"#",
+						"Штукатурные фасады загородных домов":"#" ,
+						}
+				each sublinkPatch, sublinkName in subnav
+					li.menu-item(itemprop="item" ): a(href="#" itemprop="url")= sublinkName
+		li.menu-item.menu-item-has-children
+			a(href="#" itemprop="url") Компания
+			ul.sub-menu
+				-
+					var subnav= { 
+						"Строительство загородных домов":"#",
+						"Отделка загородных домов":"#",
+						"Покраска деревянных домов":"#",
+						"Штукатурные фасады загородных домов":"#" ,
+						}
+				each sublinkPatch, sublinkName in subnav
+					li.menu-item(itemprop="item" ): a(href="#" itemprop="url")= sublinkName
+		li.menu-item.menu-item-has-children
+			a(href="#" itemprop="url") Программы 1С
+			ul.sub-menu
+				-
+					var subnav= { 
+						"Строительство загородных домов":"#",
+						"Отделка загородных домов":"#",
+						"Покраска деревянных домов":"#",
+						"Штукатурные фасады загородных домов":"#" ,
+						}
+				each sublinkPatch, sublinkName in subnav
+					li.menu-item(itemprop="item" ): a(href="#" itemprop="url")= sublinkName
+	
 		each linkPatch, linkName in nav
 			li.menu-item(itemprop="item" ): a(href= linkPatch itemprop="url")= linkName
-
-//- menu
-mixin mnu()
-	-
-		var nav= {
-			"Главная":"/",
-			"Услуги  ":"#",
-			"Подбор септика   ":"#",
-			"Акции ":"#"," О компании  ":"#",
-			" Доставка и оплата ":"#",
-			" Клиентам  ":"#",
-			" Наши работы   ":"#",
-			"Контакты ":"#"
-			}
-	+e.UL.nav(itemscope itemtype="http://schema.org/SiteNavigationElement")
-		each linkPatch, linkName in nav
-			+e.LI.item( itemprop="item" ): +e.A.link(href= linkPatch  itemprop="url")= linkName
-//- /menu
-
 
 
 
