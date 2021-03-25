@@ -95,6 +95,9 @@ $h: rem(2);
 }
 
 .menu-mobile {
+	@include media-breakpoint-up(xl){
+		display: none !important;
+	}
 	position: fixed !important;
 
 	height: 100vh;
