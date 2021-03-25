@@ -6,7 +6,7 @@
 
   padding-top: rem(48 / 2);
   position: fixed;
-  width: 100vw;
+  width: 100%;
   left: 0;
   top: 0;
   z-index: 1000;
@@ -64,12 +64,16 @@
 
   .row {
     align-items: center;
-    @media (max-width: 1870px){
-      @include roww(6);
+    @media (min-width: 1680px){
       
     }
+    @media (min-width: 576px){
+      // @include roww(6);
+      
+      @include roww(15);
+    }
+    @include roww(10);
     @media (max-width: 1200px) {
-      @include roww(10);
 
     }
     // @include roww(45 / 2);
@@ -123,7 +127,7 @@
     background-color: $dark;
     color: #ffffff !important;
     &--cabinet{
-      @media (min-width: 1870px) {
+      @media (min-width: 1680px) {
   
         width: rem(178);
       }
@@ -162,11 +166,11 @@
   &__btn-text{ 
     display: none;
     margin-left: rem(11);
-    @media (min-width: 1870px) {
+    @media (min-width: 1680px) {
       display: inline-block;
     }
   }
-  @media (max-width: 1870px) {
+  @media (max-width: 1679.9px) {
     &__link--place{
       width: rem(46);
       height: rem(46);
@@ -190,7 +194,7 @@
       }
     }
   }
-  @media (max-width: 1870px) {
+  @media (max-width:1679.9px) {
     &__col-place{
       order: 1;
     }
@@ -242,9 +246,12 @@
 
   .menu{
     display: flex;
-    justify-content: center;
+     @media (min-width: 1680px) {
+
+       justify-content: center;
+      }
     font-size: rem(14);
-    @media (min-width: 1870px) {
+    @media (min-width: 1270px) {
       
     @include roww(13);
   }

@@ -184,19 +184,7 @@ mixin mnu()
 						}
 				each sublinkPatch, sublinkName in subnav
 					li.menu-item(itemprop="item" ): a(href="#" itemprop="url")= sublinkName
-		li.menu-item.menu-item-has-children
-			a(href="#" itemprop="url") Программы 1С
-			ul.sub-menu
-				-
-					var subnav= { 
-						"Строительство загородных домов":"#",
-						"Отделка загородных домов":"#",
-						"Покраска деревянных домов":"#",
-						"Штукатурные фасады загородных домов":"#" ,
-						}
-				each sublinkPatch, sublinkName in subnav
-					li.menu-item(itemprop="item" ): a(href="#" itemprop="url")= sublinkName
-	
+
 		each linkPatch, linkName in nav
 			li.menu-item(itemprop="item" ): a(href= linkPatch itemprop="url")= linkName
 
