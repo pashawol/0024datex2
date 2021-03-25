@@ -116,10 +116,6 @@
 
   &__btn {
     @extend .btn;
-    @media (min-width: 1870px) {
-
-      width: rem(178);
-    }
     .icon{
       @include mt;
       margin-right: 0;
@@ -127,6 +123,10 @@
     background-color: $dark;
     color: #ffffff !important;
     &--cabinet{
+      @media (min-width: 1870px) {
+  
+        width: rem(178);
+      }
       width: rem(46);
     }
     &:hover {
@@ -141,6 +141,7 @@
       display: flex;
       align-items: center;
       text-align: left;
+    
     }
   }
   &__btn-avatar{
