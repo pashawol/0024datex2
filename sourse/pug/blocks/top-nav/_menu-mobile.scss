@@ -117,6 +117,7 @@ $h: rem(2);
 	&__inner {
 		// background-color: #c3c3c3;
 		padding: rem(100) 0;
+		overflow-x: hidden;
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
 		height: 100%;
@@ -260,24 +261,76 @@ $h: rem(2);
 	}
 	.menu>.menu-item > a{
 			@extend .mono;
-				font-size: rem(45);
+				font-size: 45px;
 	}
 }
 
 .menu-mobile{
+		@include media-breakpoint-down(md) {
+			a{
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+		}
+	.menu{
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	a{
+		transform: translateX(0);
+	}
 	.sub-menu{
+		min-height: 100%;
 		position: absolute;
 
 	}
+
 	.sub-menu{
 		width: 100%;
+		top: 0;
+		@include mt;
 		.sub-menu{
-			display: none;
+			// display: none;
+			transform: translateX(100%);
+			opacity: 0;
+			
+		}
+		.active>.sub-menu {
+			transform: translateX(0);
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.not-visible a,
+		.active>a {
+			transform: translateX(100%);
+
+			opacity: 0;
 		}
 	}
-	.menu>.menu-item:hover  >a {
-		@include media-breakpoint-up(lg) {
-			border-color: $primary;
+	.menu>.menu-item:hover  {
+		@include media-breakpoint-up(md) {
+			&::before{
+
+				content: '';
+				position: absolute;
+				right: -300px;
+				height: 110%;
+				top: -5%;
+				width: 401px;
+				// background-color: #fff;
+				z-index: -1;
+			}
+				&> .sub-menu{
+					visibility: visible;
+					opacity: 1;
+				}
+		}
+		&>a{
+
+			@include media-breakpoint-up(lg) {
+				border-color: $primary;
+			}
 		}
 	}
 	.menu>.menu-item:last-child > a {
@@ -299,33 +352,118 @@ $h: rem(2);
 			
 			// }
 		}
+		.menu>.menu-item-has-children{
+			cursor: pointer;
+		}
 		.menu>.menu-item-has-children>a {
-				@include media-breakpoint-down(md){
+				@include media-breakpoint-up(lg){
+					pointer-events: none;
 
+				}
+				@include media-breakpoint-down(md){
+					
 					display: flex;
 					justify-content: space-between;
 					&::after{
 						content: url("data:image/svg+xml,%3Csvg width='19' height='35' viewBox='0 0 19 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='-1' x2='24' y2='-1' transform='matrix(0.707107 0.707107 0.707107 -0.707107 1.70679 0)' stroke='%23DB1E32' stroke-width='2'/%3E%3Cline y1='-1' x2='24' y2='-1' transform='matrix(0.707107 -0.707107 -0.707107 -0.707107 0 32.7905)' stroke='%23DB1E32' stroke-width='2'/%3E%3C/svg%3E%0A");
-						
+						position: relative;
+						top: em(2);
 					}
 				}
 				}
 	.menu>.menu-item-has-children:not(:first-child)>.sub-menu {
-		display: none;
+
+		// display: none;
+	}
+	.not-visible> a{
+		transform: translateX(100%); 
+		opacity: 0;
+	}
+	.menu>.menu-item-has-children {
+		&.active > .sub-menu {
+			transform: translateX(0);
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.not-visible,
+		&.active>a {
+			transform: translateX(100%);
+
+			opacity: 0;
+		}
 	}
 	.menu>.menu-item-has-children>.sub-menu {
+
+		
+		visibility: hidden;
+		opacity: 0;
+		@include mt
 		// &:not(:first-child){
 		// 	display: none;
 		// }
+		li{
+			margin-bottom: rem(20);
+		}
+		li{
+			@include mt;
+		}
+		
 			@include media-breakpoint-up(lg){
 
 				padding-left: rem(94);
+				padding-top: rem(30);
+				padding-bottom: rem(30);
+				top: rem(-30);
 				left: 100%;
 				display: block;
 			}
-			display: none;
-		li{
-			font-size: rem(14);
+			// display: none;
+		li a{
+			font-size: 14px;
+			position: relative;
+			display: block;
 		}
 	}
+
+
+		@include media-breakpoint-down(md) {
+			a {
+				padding-left: rem(60);
+			}
+		}
+}
+
+
+.back-js{
+	font-size: 45px;
+	@extend .mono;
+	 margin-bottom: rem(40) !important;
+	 position: relative;
+	 cursor: pointer;
+	  	border-top: 1px solid rgba($color: #FFFFFF, $alpha: .1);
+	  	border-bottom: 1px solid rgba($color: #FFFFFF, $alpha: .1);
+			padding-left: rem(60);
+			padding-top: rem(15);
+			padding-bottom: rem(15);
+	 @include media-breakpoint-up(lg) {
+		padding-left: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+	 }
+	 &::before{ 
+		 	content: url("data:image/svg+xml,%3Csvg width='19' height='35' viewBox='0 0 19 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='-1' x2='24' y2='-1' transform='matrix(0.707107 0.707107 0.707107 -0.707107 1.70679 0)' stroke='%23DB1E32' stroke-width='2'/%3E%3Cline y1='-1' x2='24' y2='-1' transform='matrix(0.707107 -0.707107 -0.707107 -0.707107 0 32.7905)' stroke='%23DB1E32' stroke-width='2'/%3E%3C/svg%3E%0A"); 
+			 transform: rotateY(180deg);
+			 position: absolute;
+			 top: em(4);
+			 @include media-breakpoint-up(lg){
+				 	 right: calc(100% + #{rem(27)});
+						left: auto;
+			 }
+			 left: rem(15);
+
+			//  right: 100%;
+			//  top: em(2);
+	 }
+	 
 }

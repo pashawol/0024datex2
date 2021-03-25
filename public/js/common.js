@@ -18,7 +18,7 @@ var JSCCommon = {
 			arrows: false,
 			infobar: true,
 			touch: false,
-			type: 'inline',
+			type: "inline",
 			autoFocus: false,
 			// closeExisting: true,
 			i18n: {
@@ -98,8 +98,7 @@ var JSCCommon = {
 		_this.toggleMenu();
 
 		_this.menuMobileLink.forEach(function (element) {
-			element.addEventListener('click', function (e) {
-				_this.closeMenu();
+			element.addEventListener('click', function (e) {// _this.closeMenu();
 			});
 		});
 	},
@@ -243,5 +242,22 @@ jQuery(document).ready(function () {
 			var rellax = new Rellax('.rellax', {});
 			wow.init();
 		}
+	});
+	var link = ".menu-item-has-children > a";
+	$(".menu-mobile--js ").on('hover', link, function (e) {
+		$(".menu-mobile--js .sub-menu").removeClass("active");
+	});
+	$(".menu-mobile--js ").on('click', link, function (e) {
+		e.preventDefault();
+	});
+	var subMenu = $(".menu-mobile--js ");
+	subMenu.on("click", link, function () {
+		var title = $(this).text();
+		$(this).parent().addClass("active").siblings().addClass("not-visible");
+		$(this).next().find(".back-js").remove();
+		$(this).next().prepend("<li class=\"back-js\">".concat(title, "</li>"));
+	});
+	subMenu.on("click", ".back-js", function () {
+		$(this).parents('.menu-item-has-children').removeClass("active").siblings().removeClass("not-visible");
 	});
 });

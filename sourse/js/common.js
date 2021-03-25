@@ -1,4 +1,5 @@
 
+"use strict"
 var $ = jQuery;
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
@@ -12,7 +13,7 @@ const JSCCommon = {
 			arrows: false,
 			infobar: true,
 			touch: false,
-			type: 'inline',
+			type: "inline",
 			autoFocus: false,
 			// closeExisting: true,
 			i18n: {
@@ -99,7 +100,7 @@ const JSCCommon = {
 		_this.menuMobileLink.forEach(function (element) {
 			element.addEventListener('click', function (e) {
 
-				_this.closeMenu();
+				// _this.closeMenu();
 
 			});
 		})
@@ -270,6 +271,28 @@ jQuery(document).ready(function () {
 
 		},
 	});
+	let link = ".menu-item-has-children > a";
+	$(".menu-mobile--js ").on('hover', link , function(e){
+		$(".menu-mobile--js .sub-menu").removeClass("active");
+	});
+	
+	$(".menu-mobile--js ").on('click', link , function(e){
+		e.preventDefault();
+	});
 
+	const subMenu = $(".menu-mobile--js ");
+
+	subMenu.on("click", link , function() {
+		let title = $(this).text();
+		$(this).parent().addClass("active").siblings().addClass("not-visible");
+		$(this).next().find(".back-js").remove();
+		$(this).next().prepend(`<li class="back-js">${title}</li>`);
+
+	});
+
+	subMenu.on("click", ".back-js", function() {
+		$(this).parents('.menu-item-has-children').removeClass("active").siblings().removeClass("not-visible");
+
+	});
 
 });

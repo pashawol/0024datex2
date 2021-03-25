@@ -6,7 +6,7 @@
 
   padding-top: rem(48 / 2);
   position: fixed;
-  width: 100%;
+  width: 100vw;
   left: 0;
   top: 0;
   z-index: 1000;
@@ -80,14 +80,14 @@
   }
 
   .icon {
-    font-size: rem(18);
+    font-size: rem(16);
     color: $primary;
-    margin-right: rem(11);
+    // margin-right: rem(11);
 
-    &-tel {
-      font-size: rem(15);
+    // &-tel {
+    //   font-size: rem(15);
       
-    }
+    // }
   }
 
 
@@ -199,6 +199,9 @@
       order: 1;
     }
   }
+  .container-fluid{
+    max-width: rem(1920 - 60);
+  }
   // 
   @include media-breakpoint-up(xl) {}
   
@@ -272,7 +275,9 @@
     
   }
   & > .menu-item-has-children > a {
-    
+    &::after{
+      top: em(1);
+    }
   }
 }
 
