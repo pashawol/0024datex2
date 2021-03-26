@@ -710,7 +710,7 @@ h2 {
 			animation: d1 .8s forwards;
 		}
 
-		.animate-item__inner {
+		&>.animate-item__inner {
 
 			&::before,
 			&::after {

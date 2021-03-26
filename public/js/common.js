@@ -260,4 +260,5 @@ jQuery(document).ready(function () {
 	subMenu.on("click", ".back-js", function () {
 		$(this).parents('.menu-item-has-children').removeClass("active").siblings().removeClass("not-visible");
 	});
+	$(".top-line .sub-menu .menu-item").prepend("<span class=\"animate-item__inner\"></span>");
 });

@@ -295,4 +295,7 @@ jQuery(document).ready(function () {
 
 	});
 
+
+	$(".top-line .sub-menu .menu-item").prepend(`<span class="animate-item__inner"></span>`);
+
 });
